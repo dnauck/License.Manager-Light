@@ -66,6 +66,21 @@ namespace LightSwitchApplication
             ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowCreateNewProduct);
         }
         
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductDetail_CanRun(ref bool result, int ProductId);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductDetail_Run(ref bool handled, int ProductId);
+    
+        /// <summary>
+        /// Opens the ShowProductDetail screen.  If the screen is already opened, it is activated and shown.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ShowProductDetail(int ProductId)
+        {
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowProductDetail, ProductId);
+        }
+        
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -129,6 +144,8 @@ namespace LightSwitchApplication
                         return global::LightSwitchApplication.SearchProducts.CreateInstance();
                     case "CreateNewProduct":
                         return global::LightSwitchApplication.CreateNewProduct.CreateInstance();
+                    case "ProductDetail":
+                        return global::LightSwitchApplication.ProductDetail.CreateInstance((int)args[0]);
                 }
             
                 return base.CreateScreen(screenName, args);
@@ -192,6 +209,15 @@ namespace LightSwitchApplication
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
                                base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowCreateNewProduct);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowProductDetail
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowProductDetail);
                     }
                 }
 
@@ -299,11 +325,39 @@ namespace LightSwitchApplication
                     }
                 }
  
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
+                    ShowProductDetail = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowProductDetail",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowProductDetail_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowProductDetail_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowProductDetail_InvokeMethod);
+                private static void _ShowProductDetail_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ShowProductDetailMethod, sf);
+                }
+                private static global::System.Exception _ShowProductDetail_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Application.ProductDetail_CanRun(ref result, (int)args[0]);
+                    return result ? null : ex;
+                }
+                private static void _ShowProductDetail_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    bool handled = false;
+                    d.Application.ProductDetail_Run(ref handled, (int)args[0]);
+                    if (!handled)
+                    {
+                        d.ShowScreen("LightSwitchApplication:ProductDetail", () => global::LightSwitchApplication.ProductDetail.CreateInstance((int)args[0]), args);
+                    }
+                }
+ 
             }
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowSearchProductsMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowCreateNewProductMethod;
+
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowProductDetailMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowSearchProductsCommand;
 

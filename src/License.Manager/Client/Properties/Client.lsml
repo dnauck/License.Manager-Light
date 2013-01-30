@@ -25,6 +25,16 @@
             TargetScreen="CreateNewProduct" />
         </ApplicationMethod.Attributes>
       </ApplicationMethod>
+      <ApplicationMethod
+        Name="ShowProductDetail">
+        <ApplicationMethod.Attributes>
+          <ShowScreenMethod
+            TargetScreen="ProductDetail" />
+        </ApplicationMethod.Attributes>
+        <ApplicationMethodParameter
+          Name="ProductId"
+          ParameterType=":Int32" />
+      </ApplicationMethod>
     </Application.Methods>
     <Application.NavigationItems>
       <ApplicationNavigationGroup
@@ -548,6 +558,699 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+      </ContentItem>
+    </Screen.RootContentItem>
+  </Screen>
+  <Screen
+    Name="ProductDetail">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="LightSwitchCommonModule:ApplicationData" />
+    </Screen.Attributes>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenProperty
+        Name="Product"
+        PropertyType="LightSwitchCommonModule:Product">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="LightSwitchCommonModule:ApplicationData/Members[Products_SingleOrDefault]">
+              <ArgumentExpression
+                Parameter="Id">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ProductDetail/Properties[ProductId]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="ProductId"
+        PropertyType=":Int32">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenCollectionProperty
+        Name="ProductFeatures"
+        PageSize="15"
+        PropertyType="LightSwitchCommonModule:CollectionView$ProductFeature">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ProductFeaturesQuery"
+            ReturnType="LightSwitchCommonModule:ProductFeature*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ProductDetail/Properties[Product]" />
+                  <MemberExpression
+                    Member="ProductFeatures" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ProductDetail/Properties[ProductFeatures]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="Licenses"
+        PageSize="15"
+        PropertyType="LightSwitchCommonModule:CollectionView$License">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="LicensesQuery"
+            ReturnType="LightSwitchCommonModule:License*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ProductDetail/Properties[Product]" />
+                  <MemberExpression
+                    Member="Licenses" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ProductDetail/Properties[Licenses]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+    <Screen.RootContentItem>
+      <ContentItem
+        Kind="Screen"
+        Name="RootContentItem">
+        <ContentItem.CommandItems>
+          <ContentItem
+            Kind="Command"
+            Name="Save">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="ProductDetail/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Kind="Command"
+            Name="Refresh">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="ProductDetail/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+        <ContentItem
+          Kind="Group"
+          Name="ScreenLayout">
+          <ContentItem.PropertySources>
+            <ControlPropertySource
+              Property=":ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <ConstantExpression
+                    ResultType=":Boolean"
+                    Value="True" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ControlPropertySource>
+          </ContentItem.PropertySources>
+          <ContentItem
+            DataType="LightSwitchCommonModule:Product"
+            Kind="Details"
+            Name="details"
+            View="Microsoft.LightSwitch:ColumnsLayout">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ProductDetail/Properties[Product]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Top" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              Kind="Group"
+              Name="left">
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="Name">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Product/Properties[Name]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":String?"
+                Kind="Value"
+                Name="Description">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Product/Properties[Description]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
+              Kind="Group"
+              Name="right">
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch:RootControl/Properties[BrowseOnly]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":Boolean"
+                        Value="True" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="PrivateKey">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Product/Properties[KeyPair]" />
+                      <MemberExpression
+                        Member="PrivateKey" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="PublicKey">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Product/Properties[KeyPair]" />
+                      <MemberExpression
+                        Member="PublicKey" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Kind="Group"
+            Name="children"
+            View="Microsoft.LightSwitch:TabsLayout">
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Stretch" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType="LightSwitchCommonModule:CollectionView$ProductFeature"
+              Kind="Collection"
+              Name="ProductFeatures">
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Kind="Command"
+                  Name="ProductFeatures_AddAndEditNew">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ProductDetail/Properties[ProductFeatures]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="ProductFeatures_EditSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ProductDetail/Properties[ProductFeatures]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="ProductFeatures_DeleteSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ProductDetail/Properties[ProductFeatures]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ProductDetail/Properties[ProductFeatures]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType="LightSwitchCommonModule:ProductFeature"
+                Kind="Details"
+                Name="RowTemplate">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:ProductFeature"
+                  Kind="Details"
+                  Name="summary"
+                  View="Microsoft.LightSwitch:Summary">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property=":RootControl/Properties[ShowAsLink]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Boolean"
+                            Value="True" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:Product"
+                    Kind="Details"
+                    Name="Product">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:ProductFeature/Properties[Product]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      DataType="LightSwitchCommonModule:Product"
+                      Kind="Details"
+                      Name="RowTemplate1">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":String"
+                    Kind="Value"
+                    Name="Name2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:ProductFeature/Properties[Name]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  DataType=":String"
+                  Kind="Value"
+                  Name="Name1">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:ProductFeature/Properties[Name]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
+              DataType="LightSwitchCommonModule:CollectionView$License"
+              Kind="Collection"
+              Name="Licenses">
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Kind="Command"
+                  Name="Licenses_AddAndEditNew">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ProductDetail/Properties[Licenses]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="Licenses_EditSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ProductDetail/Properties[Licenses]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="Licenses_DeleteSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ProductDetail/Properties[Licenses]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ProductDetail/Properties[Licenses]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType="LightSwitchCommonModule:License"
+                Kind="Details"
+                Name="RowTemplate2">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:License"
+                  Kind="Details"
+                  Name="summary1"
+                  View="Microsoft.LightSwitch:Summary">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property=":RootControl/Properties[ShowAsLink]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Boolean"
+                            Value="True" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:Product"
+                    Kind="Details"
+                    Name="Product1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:License/Properties[Product]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      DataType="LightSwitchCommonModule:Product"
+                      Kind="Details"
+                      Name="RowTemplate4">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":Guid?"
+                    Kind="Value"
+                    Name="LicenseId1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:License/Properties[LicenseId]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":String?"
+                    Kind="Value"
+                    Name="Type1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:License/Properties[Type]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":Int32?"
+                    Kind="Value"
+                    Name="Quantity1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:License/Properties[Quantity]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType=":Date?"
+                    Kind="Value"
+                    Name="Expiration1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:License/Properties[Expiration]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:Customer"
+                    Kind="Details"
+                    Name="Customer1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LightSwitchCommonModule:License/Properties[Customer]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      DataType="LightSwitchCommonModule:Customer"
+                      Kind="Details"
+                      Name="RowTemplate5">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  DataType=":Guid?"
+                  Kind="Value"
+                  Name="LicenseId">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:License/Properties[LicenseId]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType=":String?"
+                  Kind="Value"
+                  Name="Type">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:License/Properties[Type]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType=":Int32?"
+                  Kind="Value"
+                  Name="Quantity">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:License/Properties[Quantity]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType=":Date?"
+                  Kind="Value"
+                  Name="Expiration">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:License/Properties[Expiration]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:Customer"
+                  Kind="Details"
+                  Name="Customer">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:License/Properties[Customer]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:Customer"
+                    Kind="Details"
+                    Name="RowTemplate3">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
               </ContentItem>
             </ContentItem>
