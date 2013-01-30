@@ -908,6 +908,18 @@
   </EntityType>
   <EntityType
     Name="License">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="License/Properties[Id]" />
+      <DefaultScreen
+        Value="LightSwitchApplication:LicenseDetail">
+        <DefaultScreen.Attributes>
+          <ScreenParameterMapping
+            KeyProperty="License/Properties[Id]"
+            ScreenParameter="LightSwitchApplication:LicenseDetail/Properties[LicenseId]" />
+        </DefaultScreen.Attributes>
+      </DefaultScreen>
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -947,6 +959,7 @@
           <NotSearchable />
           <IncludeInUniqueIndex />
           <Required />
+          <Hidden />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1028,6 +1041,10 @@
   </Association>
   <EntityType
     Name="LicenseProductFeature">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="LicenseProductFeature/Properties[Id]" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -1087,7 +1104,7 @@
       Name="License">
       <AssociationEnd.Attributes>
         <DeleteRule
-          Action="Restrict" />
+          Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
   </Association>
@@ -1172,12 +1189,16 @@
       Name="License">
       <AssociationEnd.Attributes>
         <DeleteRule
-          Action="Restrict" />
+          Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
   </Association>
   <EntityType
     Name="KeyPair">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="KeyPair/Properties[PublicKey]" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">

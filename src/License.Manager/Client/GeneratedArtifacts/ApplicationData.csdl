@@ -121,7 +121,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="LicenseProductFeature_License">
-    <End Role="License" Type="LightSwitchApplication.License" Multiplicity="1" />
+    <End Role="License" Type="LightSwitchApplication.License" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="LicenseProductFeature" Type="LightSwitchApplication.LicenseProductFeature" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="License">
@@ -145,7 +147,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="LicenseAdditionalAttribute_License">
-    <End Role="License" Type="LightSwitchApplication.License" Multiplicity="1" />
+    <End Role="License" Type="LightSwitchApplication.License" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="LicenseAdditionalAttribute" Type="LightSwitchApplication.LicenseAdditionalAttribute" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="License">

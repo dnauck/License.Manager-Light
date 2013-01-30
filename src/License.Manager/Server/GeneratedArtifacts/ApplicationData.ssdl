@@ -144,7 +144,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="LicenseProductFeature_License">
-    <End Role="License" Type="ApplicationDataStore.License" Multiplicity="1" />
+    <End Role="License" Type="ApplicationDataStore.License" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="LicenseProductFeature" Type="ApplicationDataStore.LicenseProductFeature" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="License">
@@ -168,7 +170,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="LicenseAdditionalAttribute_License">
-    <End Role="License" Type="ApplicationDataStore.License" Multiplicity="1" />
+    <End Role="License" Type="ApplicationDataStore.License" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="LicenseAdditionalAttribute" Type="ApplicationDataStore.LicenseAdditionalAttribute" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="License">
