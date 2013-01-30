@@ -942,10 +942,11 @@
         ToEnd="Product" />
       <EntityProperty
         Name="LicenseId"
-        PropertyType=":Guid?">
+        PropertyType=":Guid">
         <EntityProperty.Attributes>
           <NotSearchable />
           <IncludeInUniqueIndex />
+          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

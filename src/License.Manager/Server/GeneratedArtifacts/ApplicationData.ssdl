@@ -71,7 +71,7 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-    <Property Name="LicenseId" Type="uniqueidentifier" />
+    <Property Name="LicenseId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Type" Type="nvarchar" MaxLength="255" />
     <Property Name="Quantity" Type="int" />
     <Property Name="Expiration" Type="datetime" />

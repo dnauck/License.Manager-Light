@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 1/30/2013 10:11:56 PM
+// Generation date: 1/30/2013 10:18:46 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -879,14 +879,16 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
+        /// <param name="licenseId">Initial value of LicenseId.</param>
         /// <param name="license_Product">Initial value of License_Product.</param>
         /// <param name="license_Customer">Initial value of License_Customer.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static License CreateLicense(int ID, byte[] rowVersion, int license_Product, int license_Customer)
+        public static License CreateLicense(int ID, byte[] rowVersion, global::System.Guid licenseId, int license_Product, int license_Customer)
         {
             License license = new License();
             license.Id = ID;
             license.RowVersion = rowVersion;
+            license.LicenseId = licenseId;
             license.License_Product = license_Product;
             license.License_Customer = license_Customer;
             return license;
@@ -954,7 +956,7 @@ namespace LightSwitchApplication.Implementation
         /// There are no comments for Property LicenseId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<global::System.Guid> LicenseId
+        public global::System.Guid LicenseId
         {
             get
             {
@@ -973,8 +975,8 @@ namespace LightSwitchApplication.Implementation
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<global::System.Guid> _LicenseId;
-        partial void OnLicenseIdChanging(global::System.Nullable<global::System.Guid> value);
+        private global::System.Guid _LicenseId;
+        partial void OnLicenseIdChanging(global::System.Guid value);
         partial void OnLicenseIdChanged();
         /// <summary>
         /// There are no comments for Property Type in the schema.

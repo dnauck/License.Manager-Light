@@ -1103,7 +1103,7 @@
                     </ContentItem>
                   </ContentItem>
                   <ContentItem
-                    DataType=":Guid?"
+                    DataType=":Guid"
                     Kind="Value"
                     Name="LicenseId1">
                     <ContentItem.DataSource>
@@ -1179,7 +1179,7 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  DataType=":Guid?"
+                  DataType=":Guid"
                   Kind="Value"
                   Name="LicenseId">
                   <ContentItem.DataSource>

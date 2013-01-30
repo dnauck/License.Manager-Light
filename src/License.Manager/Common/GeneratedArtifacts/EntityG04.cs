@@ -132,7 +132,7 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Nullable<global::System.Guid> LicenseId
+        public global::System.Guid LicenseId
         {
             get
             {
@@ -415,11 +415,11 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Nullable<global::System.Guid>> LicenseId
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Guid> LicenseId
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.License.DetailsClass.PropertySetProperties.LicenseId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Nullable<global::System.Guid>>;
+                        return base.GetItem(global::LightSwitchApplication.License.DetailsClass.PropertySetProperties.LicenseId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Guid>;
                     }
                 }
                 
@@ -487,7 +487,7 @@ namespace LightSwitchApplication
             {
                 new int Id { get; set; }
                 new byte[] RowVersion { get; set; }
-                new global::System.Nullable<global::System.Guid> LicenseId { get; set; }
+                new global::System.Guid LicenseId { get; set; }
                 new string Type { get; set; }
                 new global::System.Nullable<int> Quantity { get; set; }
                 new global::System.Nullable<global::System.DateTime> Expiration { get; set; }
@@ -579,8 +579,8 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Nullable<global::System.Guid>>.Entry
-                    LicenseId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Nullable<global::System.Guid>>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Guid>.Entry
+                    LicenseId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Guid>.Entry(
                         "LicenseId",
                         global::LightSwitchApplication.License.DetailsClass.PropertySetProperties._LicenseId_Stub,
                         global::LightSwitchApplication.License.DetailsClass.PropertySetProperties._LicenseId_ComputeIsReadOnly,
@@ -588,7 +588,7 @@ namespace LightSwitchApplication
                         global::LightSwitchApplication.License.DetailsClass.PropertySetProperties._LicenseId_GetImplementationValue,
                         global::LightSwitchApplication.License.DetailsClass.PropertySetProperties._LicenseId_SetImplementationValue,
                         global::LightSwitchApplication.License.DetailsClass.PropertySetProperties._LicenseId_OnValueChanged);
-                private static void _LicenseId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.License.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Nullable<global::System.Guid>>.Data> c, global::LightSwitchApplication.License.DetailsClass d, object sf)
+                private static void _LicenseId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.License.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Guid>.Data> c, global::LightSwitchApplication.License.DetailsClass d, object sf)
                 {
                     c(d, ref d._LicenseId, sf);
                 }
@@ -602,11 +602,11 @@ namespace LightSwitchApplication
                 {
                     e.LicenseId_Validate(r);
                 }
-                private static global::System.Nullable<global::System.Guid> _LicenseId_GetImplementationValue(global::LightSwitchApplication.License.DetailsClass d)
+                private static global::System.Guid _LicenseId_GetImplementationValue(global::LightSwitchApplication.License.DetailsClass d)
                 {
                     return d.ImplementationEntity.LicenseId;
                 }
-                private static void _LicenseId_SetImplementationValue(global::LightSwitchApplication.License.DetailsClass d, global::System.Nullable<global::System.Guid> v)
+                private static void _LicenseId_SetImplementationValue(global::LightSwitchApplication.License.DetailsClass d, global::System.Guid v)
                 {
                     d.ImplementationEntity.LicenseId = v;
                 }
@@ -869,7 +869,7 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Nullable<global::System.Guid>>.Data _LicenseId;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, global::System.Guid>.Data _LicenseId;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass, string>.Data _Type;

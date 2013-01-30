@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="C:\Dev\License.Manager\src\License.Manager\Common\Properties\Common.lsml" Checksum="2F887903AAD642F4A890A9C5A83B3F42446047A0E9CCEF6242C930E7CA2B1692" />
+    <Document FullPath="C:\Dev\License.Manager\src\License.Manager\Common\Properties\Common.lsml" Checksum="0FD8D0229539B9F82D4BD98BC3AE0183B671CFDADED28861C5D6F51CA86C4032" />
     <Document FullPath="C:\Dev\License.Manager\src\License.Manager\Server\Properties\Service.lsml" Checksum="7FA1914F587B10B15D1BCC320AAD5F23A2CE148B432C83E7A964A87B4C26D6FE" />
   </Documents>
 </ModelDocumentManifest>

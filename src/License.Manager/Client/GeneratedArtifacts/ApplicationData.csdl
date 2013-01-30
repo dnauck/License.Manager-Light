@@ -40,7 +40,7 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
-    <Property Name="LicenseId" Type="Edm.Guid" />
+    <Property Name="LicenseId" Type="Edm.Guid" Nullable="false" />
     <Property Name="Type" Type="Edm.String" MaxLength="255" />
     <Property Name="Quantity" Type="Edm.Int32" />
     <Property Name="Expiration" Type="Edm.DateTime" />

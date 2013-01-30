@@ -631,13 +631,15 @@ namespace ApplicationData.Implementation
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        /// <param name="licenseId">Initial value of the LicenseId property.</param>
         /// <param name="license_Product">Initial value of the License_Product property.</param>
         /// <param name="license_Customer">Initial value of the License_Customer property.</param>
-        public static License CreateLicense(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 license_Product, global::System.Int32 license_Customer)
+        public static License CreateLicense(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Guid licenseId, global::System.Int32 license_Product, global::System.Int32 license_Customer)
         {
             License license = new License();
             license.Id = id;
             license.RowVersion = rowVersion;
+            license.LicenseId = licenseId;
             license.License_Product = license_Product;
             license.License_Customer = license_Customer;
             return license;
@@ -701,9 +703,9 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Guid> LicenseId
+        public global::System.Guid LicenseId
         {
             get
             {
@@ -718,8 +720,8 @@ namespace ApplicationData.Implementation
                 OnLicenseIdChanged();
             }
         }
-        private Nullable<global::System.Guid> _LicenseId;
-        partial void OnLicenseIdChanging(Nullable<global::System.Guid> value);
+        private global::System.Guid _LicenseId;
+        partial void OnLicenseIdChanging(global::System.Guid value);
         partial void OnLicenseIdChanged();
     
         /// <summary>
