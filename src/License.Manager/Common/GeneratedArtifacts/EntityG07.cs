@@ -132,6 +132,54 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string PrivateKey
+        {
+            get
+            {
+                return global::LightSwitchApplication.KeyPair.DetailsClass.GetValue(this, global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties.PrivateKey);
+            }
+            set
+            {
+                global::LightSwitchApplication.KeyPair.DetailsClass.SetValue(this, global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties.PrivateKey, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PrivateKey_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PrivateKey_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PrivateKey_Changed();
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string PublicKey
+        {
+            get
+            {
+                return global::LightSwitchApplication.KeyPair.DetailsClass.GetValue(this, global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties.PublicKey);
+            }
+            set
+            {
+                global::LightSwitchApplication.KeyPair.DetailsClass.SetValue(this, global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties.PublicKey, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PublicKey_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PublicKey_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PublicKey_Changed();
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.Product Product
         {
             get
@@ -249,6 +297,22 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string> PrivateKey
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties.PrivateKey) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string> PublicKey
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties.PublicKey) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, global::LightSwitchApplication.Product> Product
                 {
                     get
@@ -265,6 +329,8 @@ namespace LightSwitchApplication
             {
                 new int Id { get; set; }
                 new byte[] RowVersion { get; set; }
+                new string PrivateKey { get; set; }
+                new string PublicKey { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation Product { get; set; }
             }
             #pragma warning restore 109
@@ -350,6 +416,80 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>.Entry
+                    PrivateKey = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>.Entry(
+                        "PrivateKey",
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PrivateKey_Stub,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PrivateKey_ComputeIsReadOnly,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PrivateKey_Validate,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PrivateKey_GetImplementationValue,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PrivateKey_SetImplementationValue,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PrivateKey_OnValueChanged);
+                private static void _PrivateKey_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KeyPair.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>.Data> c, global::LightSwitchApplication.KeyPair.DetailsClass d, object sf)
+                {
+                    c(d, ref d._PrivateKey, sf);
+                }
+                private static bool _PrivateKey_ComputeIsReadOnly(global::LightSwitchApplication.KeyPair e)
+                {
+                    bool result = false;
+                    e.PrivateKey_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _PrivateKey_Validate(global::LightSwitchApplication.KeyPair e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.PrivateKey_Validate(r);
+                }
+                private static string _PrivateKey_GetImplementationValue(global::LightSwitchApplication.KeyPair.DetailsClass d)
+                {
+                    return d.ImplementationEntity.PrivateKey;
+                }
+                private static void _PrivateKey_SetImplementationValue(global::LightSwitchApplication.KeyPair.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.PrivateKey = v;
+                }
+                private static void _PrivateKey_OnValueChanged(global::LightSwitchApplication.KeyPair e)
+                {
+                    e.PrivateKey_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>.Entry
+                    PublicKey = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>.Entry(
+                        "PublicKey",
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PublicKey_Stub,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PublicKey_ComputeIsReadOnly,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PublicKey_Validate,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PublicKey_GetImplementationValue,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PublicKey_SetImplementationValue,
+                        global::LightSwitchApplication.KeyPair.DetailsClass.PropertySetProperties._PublicKey_OnValueChanged);
+                private static void _PublicKey_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.KeyPair.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>.Data> c, global::LightSwitchApplication.KeyPair.DetailsClass d, object sf)
+                {
+                    c(d, ref d._PublicKey, sf);
+                }
+                private static bool _PublicKey_ComputeIsReadOnly(global::LightSwitchApplication.KeyPair e)
+                {
+                    bool result = false;
+                    e.PublicKey_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _PublicKey_Validate(global::LightSwitchApplication.KeyPair e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.PublicKey_Validate(r);
+                }
+                private static string _PublicKey_GetImplementationValue(global::LightSwitchApplication.KeyPair.DetailsClass d)
+                {
+                    return d.ImplementationEntity.PublicKey;
+                }
+                private static void _PublicKey_SetImplementationValue(global::LightSwitchApplication.KeyPair.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.PublicKey = v;
+                }
+                private static void _PublicKey_OnValueChanged(global::LightSwitchApplication.KeyPair e)
+                {
+                    e.PublicKey_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, global::LightSwitchApplication.Product>.Entry
                     Product = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, global::LightSwitchApplication.Product>.Entry(
                         "Product",
@@ -403,6 +543,12 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, byte[]>.Data _RowVersion;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>.Data _PrivateKey;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, string>.Data _PublicKey;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass, global::LightSwitchApplication.Product>.Data _Product;

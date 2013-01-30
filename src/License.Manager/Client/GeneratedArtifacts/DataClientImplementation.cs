@@ -629,6 +629,16 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RowVersion");
         }
         
+        partial void OnPrivateKeyChanged()
+        {
+            this.___OnPropertyChanged("PrivateKey");
+        }
+        
+        partial void OnPublicKeyChanged()
+        {
+            this.___OnPropertyChanged("PublicKey");
+        }
+        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.KeyPair.DetailsClass.IImplementation.Product
         {
             get

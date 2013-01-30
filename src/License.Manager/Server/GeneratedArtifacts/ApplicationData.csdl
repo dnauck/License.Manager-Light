@@ -80,6 +80,8 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PrivateKey" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="PublicKey" Type="Edm.String" Nullable="false" MaxLength="255" />
     <NavigationProperty Name="Product" Relationship="LightSwitchApplication.KeyPair_Product" ToRole="Product" FromRole="KeyPair" />
   </EntityType>
   <Association Name="ProductFeature_Product">

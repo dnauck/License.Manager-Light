@@ -73,6 +73,8 @@
         <MappingFragment StoreEntitySet="KeyPairs">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="PrivateKey" ColumnName="PrivateKey" />
+          <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

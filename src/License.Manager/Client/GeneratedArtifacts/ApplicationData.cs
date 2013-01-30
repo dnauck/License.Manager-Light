@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 1/30/2013 9:20:38 PM
+// Generation date: 1/30/2013 9:20:59 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1755,12 +1755,16 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
+        /// <param name="privateKey">Initial value of PrivateKey.</param>
+        /// <param name="publicKey">Initial value of PublicKey.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static KeyPair CreateKeyPair(int ID, byte[] rowVersion)
+        public static KeyPair CreateKeyPair(int ID, byte[] rowVersion, string privateKey, string publicKey)
         {
             KeyPair keyPair = new KeyPair();
             keyPair.Id = ID;
             keyPair.RowVersion = rowVersion;
+            keyPair.PrivateKey = privateKey;
+            keyPair.PublicKey = publicKey;
             return keyPair;
         }
         /// <summary>
@@ -1822,6 +1826,58 @@ namespace LightSwitchApplication.Implementation
         private byte[] _RowVersion;
         partial void OnRowVersionChanging(byte[] value);
         partial void OnRowVersionChanged();
+        /// <summary>
+        /// There are no comments for Property PrivateKey in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string PrivateKey
+        {
+            get
+            {
+                return this._PrivateKey;
+            }
+            set
+            {
+                this.OnPrivateKeyChanging(value);
+                if (object.Equals(this.PrivateKey, value))
+                {
+                    return;
+                }
+                this._PrivateKey = value;
+                this.OnPrivateKeyChanged();
+                this.OnPropertyChanged("PrivateKey");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _PrivateKey;
+        partial void OnPrivateKeyChanging(string value);
+        partial void OnPrivateKeyChanged();
+        /// <summary>
+        /// There are no comments for Property PublicKey in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string PublicKey
+        {
+            get
+            {
+                return this._PublicKey;
+            }
+            set
+            {
+                this.OnPublicKeyChanging(value);
+                if (object.Equals(this.PublicKey, value))
+                {
+                    return;
+                }
+                this._PublicKey = value;
+                this.OnPublicKeyChanged();
+                this.OnPropertyChanged("PublicKey");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _PublicKey;
+        partial void OnPublicKeyChanging(string value);
+        partial void OnPublicKeyChanged();
         /// <summary>
         /// There are no comments for Product in the schema.
         /// </summary>

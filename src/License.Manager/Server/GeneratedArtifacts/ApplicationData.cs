@@ -454,11 +454,15 @@ namespace ApplicationData.Implementation
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static KeyPair CreateKeyPair(global::System.Int32 id, global::System.Byte[] rowVersion)
+        /// <param name="privateKey">Initial value of the PrivateKey property.</param>
+        /// <param name="publicKey">Initial value of the PublicKey property.</param>
+        public static KeyPair CreateKeyPair(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String privateKey, global::System.String publicKey)
         {
             KeyPair keyPair = new KeyPair();
             keyPair.Id = id;
             keyPair.RowVersion = rowVersion;
+            keyPair.PrivateKey = privateKey;
+            keyPair.PublicKey = publicKey;
             return keyPair;
         }
 
@@ -516,6 +520,54 @@ namespace ApplicationData.Implementation
         private global::System.Byte[] _RowVersion;
         partial void OnRowVersionChanging(global::System.Byte[] value);
         partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PrivateKey
+        {
+            get
+            {
+                return _PrivateKey;
+            }
+            set
+            {
+                OnPrivateKeyChanging(value);
+                ReportPropertyChanging("PrivateKey");
+                _PrivateKey = value;
+                ReportPropertyChanged("PrivateKey");
+                OnPrivateKeyChanged();
+            }
+        }
+        private global::System.String _PrivateKey;
+        partial void OnPrivateKeyChanging(global::System.String value);
+        partial void OnPrivateKeyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PublicKey
+        {
+            get
+            {
+                return _PublicKey;
+            }
+            set
+            {
+                OnPublicKeyChanging(value);
+                ReportPropertyChanging("PublicKey");
+                _PublicKey = value;
+                ReportPropertyChanged("PublicKey");
+                OnPublicKeyChanged();
+            }
+        }
+        private global::System.String _PublicKey;
+        partial void OnPublicKeyChanging(global::System.String value);
+        partial void OnPublicKeyChanged();
 
         #endregion
 
