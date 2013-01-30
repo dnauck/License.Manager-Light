@@ -89,6 +89,38 @@ namespace LightSwitchApplication.Implementation
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.License> ___Licenses;
         
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Product.DetailsClass.IImplementation.KeyPair
+        {
+            get
+            {
+                return this.KeyPair;
+            }
+            set
+            {
+                this.KeyPair = (global::LightSwitchApplication.Implementation.KeyPair)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KeyPair> __KeyPair
+        {
+            get
+            {
+                if (this.___KeyPair == null)
+                {
+                    this.___KeyPair = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KeyPair>(
+                        this,
+                        "KeyPair",
+                        new string[] { "Id" },
+                        e => global::System.Object.Equals(e.Id, this.Id),
+                        () => this._KeyPair,
+                        e => this._KeyPair = e);
+                }
+                return this.___KeyPair;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.KeyPair> ___KeyPair;
+        
     }
     #endregion
     
@@ -579,6 +611,59 @@ namespace LightSwitchApplication.Implementation
     }
     #endregion
     
+    #region KeyPair
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class KeyPair :
+        global::LightSwitchApplication.KeyPair.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+            this.___OnPropertyChanged("Product");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.KeyPair.DetailsClass.IImplementation.Product
+        {
+            get
+            {
+                return this.Product;
+            }
+            set
+            {
+                this.Product = (global::LightSwitchApplication.Implementation.Product)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product> __Product
+        {
+            get
+            {
+                if (this.___Product == null)
+                {
+                    this.___Product = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product>(
+                        this,
+                        "Product",
+                        new string[] { "Id" },
+                        e => global::System.Object.Equals(e.Id, this.Id),
+                        () => this._Product,
+                        e => this._Product = e);
+                }
+                return this.___Product;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product> ___Product;
+        
+    }
+    #endregion
+    
     #region ApplicationDataObjectContext
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -609,6 +694,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.LicenseAdditionalAttribute))
             {
                 return new global::LightSwitchApplication.Implementation.LicenseAdditionalAttribute();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.KeyPair))
+            {
+                return new global::LightSwitchApplication.Implementation.KeyPair();
             }
             return null;
         }
@@ -676,6 +765,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.LicenseAdditionalAttribute) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.LicenseAdditionalAttribute);
+            }
+            if (typeof(global::LightSwitchApplication.KeyPair) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.KeyPair);
             }
             return null;
         }

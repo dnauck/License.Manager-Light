@@ -221,6 +221,30 @@ namespace LightSwitchApplication
             }
         }
 
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::LightSwitchApplication.KeyPair KeyPair
+        {
+            get
+            {
+                return global::LightSwitchApplication.Product.DetailsClass.GetValue(this, global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.KeyPair);
+            }
+            set
+            {
+                global::LightSwitchApplication.Product.DetailsClass.SetValue(this, global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.KeyPair, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPair_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPair_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPair_Changed();
+
         #endregion
     
         #region Details Class
@@ -351,6 +375,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.KeyPair> KeyPair
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.KeyPair) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.KeyPair>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -363,6 +395,7 @@ namespace LightSwitchApplication
                 new string Description { get; set; }
                 new global::System.Collections.IEnumerable ProductFeatures { get; }
                 new global::System.Collections.IEnumerable Licenses { get; }
+                new global::Microsoft.LightSwitch.Internal.IEntityImplementation KeyPair { get; set; }
             }
             #pragma warning restore 109
     
@@ -560,6 +593,53 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.Licenses;
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.KeyPair>.Entry
+                    KeyPair = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.KeyPair>.Entry(
+                        "KeyPair",
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._KeyPair_Stub,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._KeyPair_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._KeyPair_Validate,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._KeyPair_GetCoreImplementationValue,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._KeyPair_GetImplementationValue,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._KeyPair_SetImplementationValue,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._KeyPair_Refresh,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._KeyPair_OnValueChanged);
+                private static void _KeyPair_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Product.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.KeyPair>.Data> c, global::LightSwitchApplication.Product.DetailsClass d, object sf)
+                {
+                    c(d, ref d._KeyPair, sf);
+                }
+                private static bool _KeyPair_ComputeIsReadOnly(global::LightSwitchApplication.Product e)
+                {
+                    bool result = false;
+                    e.KeyPair_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _KeyPair_Validate(global::LightSwitchApplication.Product e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.KeyPair_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _KeyPair_GetCoreImplementationValue(global::LightSwitchApplication.Product.DetailsClass d)
+                {
+                    return d.ImplementationEntity.KeyPair;
+                }
+                private static global::LightSwitchApplication.KeyPair _KeyPair_GetImplementationValue(global::LightSwitchApplication.Product.DetailsClass d)
+                {
+                    return d.GetImplementationValue<global::LightSwitchApplication.KeyPair, global::LightSwitchApplication.KeyPair.DetailsClass>(global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.KeyPair, ref d._KeyPair);
+                }
+                private static void _KeyPair_SetImplementationValue(global::LightSwitchApplication.Product.DetailsClass d, global::LightSwitchApplication.KeyPair v)
+                {
+                    d.SetImplementationValue(global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.KeyPair, ref d._KeyPair, (i, ev) => i.KeyPair = ev, v);
+                }
+                private static void _KeyPair_Refresh(global::LightSwitchApplication.Product.DetailsClass d)
+                {
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.KeyPair, ref d._KeyPair);
+                }
+                private static void _KeyPair_OnValueChanged(global::LightSwitchApplication.Product e)
+                {
+                    e.KeyPair_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -579,6 +659,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.License>.Data _Licenses;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.KeyPair>.Data _KeyPair;
             
         }
     

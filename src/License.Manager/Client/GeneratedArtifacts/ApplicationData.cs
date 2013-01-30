@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 1/30/2013 9:12:13 PM
+// Generation date: 1/30/2013 9:20:38 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -161,6 +161,23 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<LicenseAdditionalAttribute> _LicenseAdditionalAttributes;
         /// <summary>
+        /// There are no comments for KeyPairs in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<KeyPair> KeyPairs
+        {
+            get
+            {
+                if ((this._KeyPairs == null))
+                {
+                    this._KeyPairs = base.CreateQuery<KeyPair>("KeyPairs");
+                }
+                return this._KeyPairs;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<KeyPair> _KeyPairs;
+        /// <summary>
         /// There are no comments for Products in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -207,6 +224,14 @@ namespace LightSwitchApplication.Implementation
         public void AddToLicenseAdditionalAttributes(LicenseAdditionalAttribute licenseAdditionalAttribute)
         {
             base.AddObject("LicenseAdditionalAttributes", licenseAdditionalAttribute);
+        }
+        /// <summary>
+        /// There are no comments for KeyPairs in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToKeyPairs(KeyPair keyPair)
+        {
+            base.AddObject("KeyPairs", keyPair);
         }
     }
     /// <summary>
@@ -383,6 +408,42 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<License> _Licenses = new global::System.Data.Services.Client.DataServiceCollection<License>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for KeyPair in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public KeyPair KeyPair
+        {
+            get
+            {
+                this.@__KeyPair.EnsureValueInitialized();
+                return this._KeyPair;
+            }
+            set
+            {
+                KeyPair previous = this.KeyPair;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._KeyPair = null;
+                    this.@__KeyPair.OnValueSet();
+                    previous.Product = null;
+                }
+                this._KeyPair = value;
+                this.@__KeyPair.OnValueSet();
+                if ((value != null))
+                {
+                    value.Product = this;
+                }
+                this.___OnPropertyChanged("KeyPair");
+                this.OnPropertyChanged("KeyPair");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private KeyPair _KeyPair;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1668,6 +1729,146 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private License _License;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for LightSwitchApplication.KeyPair in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("KeyPairs")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class KeyPair : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new KeyPair object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="rowVersion">Initial value of RowVersion.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static KeyPair CreateKeyPair(int ID, byte[] rowVersion)
+        {
+            KeyPair keyPair = new KeyPair();
+            keyPair.Id = ID;
+            keyPair.RowVersion = rowVersion;
+            return keyPair;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property RowVersion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// There are no comments for Product in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Product Product
+        {
+            get
+            {
+                this.@__Product.EnsureValueInitialized();
+                return this._Product;
+            }
+            set
+            {
+                Product previous = this.Product;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._Product = null;
+                    this.@__Product.OnValueSet();
+                    previous.KeyPair = null;
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.Id = value.Id;
+                    }
+                    else
+                    {
+                        this.Id = default(int);
+                    }
+                }
+                this._Product = value;
+                this.@__Product.OnValueSet();
+                if ((value != null))
+                {
+                    value.KeyPair = this;
+                }
+                this.___OnPropertyChanged("Product");
+                this.OnPropertyChanged("Product");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Product _Product;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

@@ -276,6 +276,42 @@ namespace LightSwitchApplication
         partial void LicenseAdditionalAttributes_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.LicenseAdditionalAttribute, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_Inserting(global::LightSwitchApplication.KeyPair entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_Inserted(global::LightSwitchApplication.KeyPair entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_Updating(global::LightSwitchApplication.KeyPair entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_Updated(global::LightSwitchApplication.KeyPair entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_Deleting(global::LightSwitchApplication.KeyPair entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_Deleted(global::LightSwitchApplication.KeyPair entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_Validate(global::LightSwitchApplication.KeyPair entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void KeyPairs_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.KeyPair, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -757,6 +793,81 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.LicenseAdditionalAttribute, bool>> filter = null;
                 d.LicenseAdditionalAttributes_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.KeyPair>
+                __KeyPairsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.KeyPair>(
+                    "KeyPairs",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__KeyPairs_Filter);
+            private static bool __KeyPairs_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.KeyPairs_CanInsert(ref result);
+                return result;
+            }
+            private static bool __KeyPairs_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.KeyPairs_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __KeyPairs_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.KeyPairs_CanDelete(ref result);
+                return result;
+            }
+            private static bool __KeyPairs_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.KeyPairs_CanRead(ref result);
+                return result;
+            }
+            private static void __KeyPairs_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.KeyPair e)
+            {
+                d.KeyPairs_Inserting(e);
+            }
+            private static void __KeyPairs_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.KeyPair e)
+            {
+                d.KeyPairs_Inserted(e);
+            }
+            private static void __KeyPairs_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.KeyPair e)
+            {
+                d.KeyPairs_Updating(e);
+            }
+            private static void __KeyPairs_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.KeyPair e)
+            {
+                d.KeyPairs_Updated(e);
+            }
+            private static void __KeyPairs_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.KeyPair e)
+            {
+                d.KeyPairs_Deleting(e);
+            }
+            private static void __KeyPairs_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.KeyPair e)
+            {
+                d.KeyPairs_Deleted(e);
+            }
+            private static void __KeyPairs_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.KeyPair e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.KeyPairs_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.KeyPair, bool>> __KeyPairs_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.KeyPair, bool>> filter = null;
+                d.KeyPairs_Filter(ref filter);
                 return filter;
             }
             

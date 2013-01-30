@@ -68,5 +68,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="KeyPairs">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.KeyPair)">
+        <MappingFragment StoreEntitySet="KeyPairs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -10,13 +10,26 @@
       <ModuleNamespace
         Namespace="LightSwitchApplication" />
     </Application.Attributes>
+    <Application.Methods>
+      <ApplicationMethod
+        Name="ShowSearchProducts">
+        <ApplicationMethod.Attributes>
+          <ShowScreenMethod
+            TargetScreen="SearchProducts" />
+        </ApplicationMethod.Attributes>
+      </ApplicationMethod>
+    </Application.Methods>
     <Application.NavigationItems>
       <ApplicationNavigationGroup
+        DefaultItem="!module/NavigationItems[Tasks]/Children[SearchProducts]"
         Name="Tasks">
         <ApplicationNavigationGroup.Attributes>
           <DisplayName
             Value="Tasks" />
         </ApplicationNavigationGroup.Attributes>
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShowSearchProducts]"
+          Name="SearchProducts" />
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="Administration">
@@ -32,5 +45,214 @@
           Name="UsersScreen" />
       </ApplicationNavigationGroup>
     </Application.NavigationItems>
+    <ApplicationCommand
+      Name="ScreenCommandShowSearchProducts"
+      Target="!module/Methods[ShowSearchProducts]" />
   </Application>
+  <Screen
+    Name="SearchProducts">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="LightSwitchCommonModule:ApplicationData" />
+    </Screen.Attributes>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="Products"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$Product">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ProductsQuery"
+            ReturnType="LightSwitchCommonModule:Product*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:ApplicationData/Members[Products]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="SearchProducts/Properties[Products]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+    <Screen.RootContentItem>
+      <ContentItem
+        Kind="Screen"
+        Name="RootContentItem">
+        <ContentItem.CommandItems>
+          <ContentItem
+            Kind="Command"
+            Name="Save">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="SearchProducts/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Kind="Command"
+            Name="Refresh">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="SearchProducts/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+        <ContentItem
+          Kind="Group"
+          Name="ScreenLayout">
+          <ContentItem
+            DataType="LightSwitchCommonModule:CollectionView$Product"
+            Kind="Collection"
+            Name="grid">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="SearchProducts/Properties[Products]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":DataGrid/Properties[ShowVirtualRow]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":Boolean"
+                      Value="False" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property=":RootControl/Properties[AttachedLabelPosition]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Collapsed" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property=":RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Stretch" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType="LightSwitchCommonModule:Product"
+              Kind="Details"
+              Name="RowTemplate">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property=":RootControl/Properties[BrowseOnly]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":Boolean"
+                        Value="True" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="Name">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Product/Properties[Name]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property=":RootControl/Properties[ShowAsLink]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          ResultType=":Boolean"
+                          Value="True" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                DataType=":String?"
+                Kind="Value"
+                Name="Description">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:Product/Properties[Description]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+      </ContentItem>
+    </Screen.RootContentItem>
+  </Screen>
 </ModelFragment>

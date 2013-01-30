@@ -10,6 +10,7 @@
     <Property Name="Description" Type="Edm.String" MaxLength="255" />
     <NavigationProperty Name="ProductFeatures" Relationship="LightSwitchApplication.ProductFeature_Product" ToRole="ProductFeature" FromRole="Product" />
     <NavigationProperty Name="Licenses" Relationship="LightSwitchApplication.License_Product" ToRole="License" FromRole="Product" />
+    <NavigationProperty Name="KeyPair" Relationship="LightSwitchApplication.KeyPair_Product" ToRole="KeyPair" FromRole="Product" />
   </EntityType>
   <EntityType Name="ProductFeature">
     <Key>
@@ -72,6 +73,14 @@
     <Property Name="Value" Type="Edm.String" MaxLength="255" />
     <Property Name="LicenseAdditionalAttribute_License" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="License" Relationship="LightSwitchApplication.LicenseAdditionalAttribute_License" ToRole="License" FromRole="LicenseAdditionalAttribute" />
+  </EntityType>
+  <EntityType Name="KeyPair">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Product" Relationship="LightSwitchApplication.KeyPair_Product" ToRole="Product" FromRole="KeyPair" />
   </EntityType>
   <Association Name="ProductFeature_Product">
     <End Role="Product" Type="LightSwitchApplication.Product" Multiplicity="1" />
@@ -145,6 +154,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="KeyPair_Product">
+    <End Role="Product" Type="LightSwitchApplication.Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KeyPair" Type="LightSwitchApplication.KeyPair" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="KeyPair">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Products" EntityType="LightSwitchApplication.Product" />
     <EntitySet Name="ProductFeatures" EntityType="LightSwitchApplication.ProductFeature" />
@@ -152,6 +175,7 @@
     <EntitySet Name="Licenses" EntityType="LightSwitchApplication.License" />
     <EntitySet Name="LicenseProductFeatures" EntityType="LightSwitchApplication.LicenseProductFeature" />
     <EntitySet Name="LicenseAdditionalAttributes" EntityType="LightSwitchApplication.LicenseAdditionalAttribute" />
+    <EntitySet Name="KeyPairs" EntityType="LightSwitchApplication.KeyPair" />
     <AssociationSet Name="ProductFeature_Product" Association="LightSwitchApplication.ProductFeature_Product">
       <End Role="Product" EntitySet="Products" />
       <End Role="ProductFeature" EntitySet="ProductFeatures" />
@@ -175,6 +199,10 @@
     <AssociationSet Name="LicenseAdditionalAttribute_License" Association="LightSwitchApplication.LicenseAdditionalAttribute_License">
       <End Role="License" EntitySet="Licenses" />
       <End Role="LicenseAdditionalAttribute" EntitySet="LicenseAdditionalAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="KeyPair_Product" Association="LightSwitchApplication.KeyPair_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="KeyPair" EntitySet="KeyPairs" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

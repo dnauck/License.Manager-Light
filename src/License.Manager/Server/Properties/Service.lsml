@@ -182,5 +182,35 @@
           Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="KeyPair_Products">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="KeyPair_Products" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[KeyPair_Products]/Members[KeyPair]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[KeyPair_Products]/Members[Product]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="KeyPairs">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="Id"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
   </DataService>
 </ModelFragment>

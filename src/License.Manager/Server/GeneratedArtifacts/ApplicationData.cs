@@ -25,6 +25,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "LicenseProductFeature_License", "License", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.License), "LicenseProductFeature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.LicenseProductFeature), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "LicenseProductFeature_ProductFeature", "ProductFeature", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.ProductFeature), "LicenseProductFeature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.LicenseProductFeature), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "LicenseAdditionalAttribute_License", "License", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.License), "LicenseAdditionalAttribute", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.LicenseAdditionalAttribute), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "KeyPair_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Product), "KeyPair", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApplicationData.Implementation.KeyPair), true)]
 
 #endregion
 
@@ -168,6 +169,22 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<LicenseAdditionalAttribute> _LicenseAdditionalAttributes;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<KeyPair> KeyPairs
+        {
+            get
+            {
+                if ((_KeyPairs == null))
+                {
+                    _KeyPairs = base.CreateObjectSet<KeyPair>("KeyPairs");
+                }
+                return _KeyPairs;
+            }
+        }
+        private ObjectSet<KeyPair> _KeyPairs;
 
         #endregion
 
@@ -219,6 +236,14 @@ namespace ApplicationData.Implementation
         public void AddToLicenseAdditionalAttributes(LicenseAdditionalAttribute licenseAdditionalAttribute)
         {
             base.AddObject("LicenseAdditionalAttributes", licenseAdditionalAttribute);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the KeyPairs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToKeyPairs(KeyPair keyPair)
+        {
+            base.AddObject("KeyPairs", keyPair);
         }
 
         #endregion
@@ -406,6 +431,131 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<License>("LightSwitchApplication.License_Customer", "License", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="KeyPair")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class KeyPair : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new KeyPair object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        public static KeyPair CreateKeyPair(global::System.Int32 id, global::System.Byte[] rowVersion)
+        {
+            KeyPair keyPair = new KeyPair();
+            keyPair.Id = id;
+            keyPair.RowVersion = rowVersion;
+            return keyPair;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "KeyPair_Product", "Product")]
+        public Product Product
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.KeyPair_Product", "Product").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.KeyPair_Product", "Product").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Product> ProductReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.KeyPair_Product", "Product");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("LightSwitchApplication.KeyPair_Product", "Product", value);
                 }
             }
         }
@@ -1382,6 +1532,44 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<License>("LightSwitchApplication.License_Product", "License", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "KeyPair_Product", "KeyPair")]
+        public KeyPair KeyPair
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KeyPair>("LightSwitchApplication.KeyPair_Product", "KeyPair").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KeyPair>("LightSwitchApplication.KeyPair_Product", "KeyPair").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<KeyPair> KeyPairReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KeyPair>("LightSwitchApplication.KeyPair_Product", "KeyPair");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<KeyPair>("LightSwitchApplication.KeyPair_Product", "KeyPair", value);
                 }
             }
         }
