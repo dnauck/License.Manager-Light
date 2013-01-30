@@ -42,5 +42,145 @@
           Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="License_Products">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="License_Products" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[License_Products]/Members[License]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="License_Product" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[License_Products]/Members[Product]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="Licenses">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="License_Product"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="License_Customer"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="License_Customers">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="License_Customers" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[License_Customers]/Members[License]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="License_Customer" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[License_Customers]/Members[Customer]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="LicenseProductFeature_Licenses">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="LicenseProductFeature_Licenses" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[LicenseProductFeature_Licenses]/Members[LicenseProductFeature]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LicenseProductFeature_License" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[LicenseProductFeature_Licenses]/Members[License]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="LicenseProductFeatures">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="LicenseProductFeature_License"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="LicenseProductFeature_ProductFeature"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="LicenseProductFeature_ProductFeatures">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="LicenseProductFeature_ProductFeatures" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[LicenseProductFeature_ProductFeatures]/Members[LicenseProductFeature]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LicenseProductFeature_ProductFeature" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[LicenseProductFeature_ProductFeatures]/Members[ProductFeature]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="LicenseAdditionalAttribute_Licenses">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="LicenseAdditionalAttribute_Licenses" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[LicenseAdditionalAttribute_Licenses]/Members[LicenseAdditionalAttribute]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LicenseAdditionalAttribute_License" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[LicenseAdditionalAttribute_Licenses]/Members[License]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="LicenseAdditionalAttributes">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="LicenseAdditionalAttribute_License"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
   </DataService>
 </ModelFragment>

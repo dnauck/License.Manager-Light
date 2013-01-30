@@ -50,6 +50,22 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::ApplicationData.Implementation.ProductFeature();
             }
+            if (type == typeof(global::ApplicationData.Implementation.Customer))
+            {
+                return new global::ApplicationData.Implementation.Customer();
+            }
+            if (type == typeof(global::ApplicationData.Implementation.License))
+            {
+                return new global::ApplicationData.Implementation.License();
+            }
+            if (type == typeof(global::ApplicationData.Implementation.LicenseProductFeature))
+            {
+                return new global::ApplicationData.Implementation.LicenseProductFeature();
+            }
+            if (type == typeof(global::ApplicationData.Implementation.LicenseAdditionalAttribute))
+            {
+                return new global::ApplicationData.Implementation.LicenseAdditionalAttribute();
+            }
     
             return base.CreateObject(type);
         }
@@ -72,6 +88,22 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.ProductFeature))
             {
                 return new global::ApplicationData.Implementation.ProductFeature();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.Customer))
+            {
+                return new global::ApplicationData.Implementation.Customer();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.License))
+            {
+                return new global::ApplicationData.Implementation.License();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.LicenseProductFeature))
+            {
+                return new global::ApplicationData.Implementation.LicenseProductFeature();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.LicenseAdditionalAttribute))
+            {
+                return new global::ApplicationData.Implementation.LicenseAdditionalAttribute();
             }
             return null;
         }
@@ -126,6 +158,22 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::ApplicationData.Implementation.ProductFeature);
             }
+            if (typeof(global::LightSwitchApplication.Customer) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.Customer);
+            }
+            if (typeof(global::LightSwitchApplication.License) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.License);
+            }
+            if (typeof(global::LightSwitchApplication.LicenseProductFeature) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.LicenseProductFeature);
+            }
+            if (typeof(global::LightSwitchApplication.LicenseAdditionalAttribute) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.LicenseAdditionalAttribute);
+            }
             return null;
         }
     }
@@ -145,6 +193,14 @@ namespace ApplicationData.Implementation
             get
             {
                 return this.ProductFeatures;
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Product.DetailsClass.IImplementation.Licenses
+        {
+            get
+            {
+                return this.Licenses;
             }
         }
         
@@ -197,11 +253,295 @@ namespace ApplicationData.Implementation
             }
         }
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.ProductFeature.DetailsClass.IImplementation.LicenseProductFeatures
+        {
+            get
+            {
+                return this.LicenseProductFeatures;
+            }
+        }
+        
         partial void OnProductFeature_ProductChanged()
         {
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("Product");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class Customer :
+        global::LightSwitchApplication.Customer.DetailsClass.IImplementation
+    {
+    
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Customer.DetailsClass.IImplementation.Licenses
+        {
+            get
+            {
+                return this.Licenses;
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class License :
+        global::LightSwitchApplication.License.DetailsClass.IImplementation
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.License.DetailsClass.IImplementation.Product
+        {
+            get
+            {
+                return this.Product;
+            }
+            set
+            {
+                this.Product = (global::ApplicationData.Implementation.Product)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.License.DetailsClass.IImplementation.Customer
+        {
+            get
+            {
+                return this.Customer;
+            }
+            set
+            {
+                this.Customer = (global::ApplicationData.Implementation.Customer)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.License.DetailsClass.IImplementation.LicenseProductFeatures
+        {
+            get
+            {
+                return this.LicenseProductFeatures;
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.License.DetailsClass.IImplementation.LicenseAdditionalAttributes
+        {
+            get
+            {
+                return this.LicenseAdditionalAttributes;
+            }
+        }
+        
+        partial void OnLicense_ProductChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Product");
+            }
+        }
+        
+        partial void OnLicense_CustomerChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Customer");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class LicenseProductFeature :
+        global::LightSwitchApplication.LicenseProductFeature.DetailsClass.IImplementation
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.LicenseProductFeature.DetailsClass.IImplementation.License
+        {
+            get
+            {
+                return this.License;
+            }
+            set
+            {
+                this.License = (global::ApplicationData.Implementation.License)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("License");
+                }
+            }
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.LicenseProductFeature.DetailsClass.IImplementation.ProductFeature
+        {
+            get
+            {
+                return this.ProductFeature;
+            }
+            set
+            {
+                this.ProductFeature = (global::ApplicationData.Implementation.ProductFeature)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("ProductFeature");
+                }
+            }
+        }
+        
+        partial void OnLicenseProductFeature_LicenseChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("License");
+            }
+        }
+        
+        partial void OnLicenseProductFeature_ProductFeatureChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("ProductFeature");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class LicenseAdditionalAttribute :
+        global::LightSwitchApplication.LicenseAdditionalAttribute.DetailsClass.IImplementation
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.LicenseAdditionalAttribute.DetailsClass.IImplementation.License
+        {
+            get
+            {
+                return this.License;
+            }
+            set
+            {
+                this.License = (global::ApplicationData.Implementation.License)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("License");
+                }
+            }
+        }
+        
+        partial void OnLicenseAdditionalAttribute_LicenseChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("License");
             }
         }
         

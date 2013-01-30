@@ -300,6 +300,314 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="License"
+      Name="Licenses" />
+    <QueryOperation
+      Name="Licenses_Single"
+      ReturnType="License">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Licenses" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Licenses_SingleOrDefault"
+      ReturnType="License">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Licenses" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="License_Product"
+      Name="License_Products">
+      <AssociationSetEnd
+        EntitySet="Licenses"
+        Name="License" />
+      <AssociationSetEnd
+        EntitySet="Products"
+        Name="Product" />
+    </AssociationSet>
+    <AssociationSet
+      Association="License_Customer"
+      Name="License_Customers">
+      <AssociationSetEnd
+        EntitySet="Licenses"
+        Name="License" />
+      <AssociationSetEnd
+        EntitySet="Customers"
+        Name="Customer" />
+    </AssociationSet>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="LicenseProductFeature"
+      Name="LicenseProductFeatures" />
+    <QueryOperation
+      Name="LicenseProductFeatures_Single"
+      ReturnType="LicenseProductFeature">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LicenseProductFeatures" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="LicenseProductFeatures_SingleOrDefault"
+      ReturnType="LicenseProductFeature">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LicenseProductFeatures" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="LicenseProductFeature_License"
+      Name="LicenseProductFeature_Licenses">
+      <AssociationSetEnd
+        EntitySet="LicenseProductFeatures"
+        Name="LicenseProductFeature" />
+      <AssociationSetEnd
+        EntitySet="Licenses"
+        Name="License" />
+    </AssociationSet>
+    <AssociationSet
+      Association="LicenseProductFeature_ProductFeature"
+      Name="LicenseProductFeature_ProductFeatures">
+      <AssociationSetEnd
+        EntitySet="LicenseProductFeatures"
+        Name="LicenseProductFeature" />
+      <AssociationSetEnd
+        EntitySet="ProductFeatures"
+        Name="ProductFeature" />
+    </AssociationSet>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="LicenseAdditionalAttribute"
+      Name="LicenseAdditionalAttributes" />
+    <QueryOperation
+      Name="LicenseAdditionalAttributes_Single"
+      ReturnType="LicenseAdditionalAttribute">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LicenseAdditionalAttributes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="LicenseAdditionalAttributes_SingleOrDefault"
+      ReturnType="LicenseAdditionalAttribute">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="LicenseAdditionalAttributes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="LicenseAdditionalAttribute_License"
+      Name="LicenseAdditionalAttribute_Licenses">
+      <AssociationSetEnd
+        EntitySet="LicenseAdditionalAttributes"
+        Name="LicenseAdditionalAttribute" />
+      <AssociationSetEnd
+        EntitySet="Licenses"
+        Name="License" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType
     Name="Product">
@@ -352,6 +660,11 @@
         FromEnd="Product"
         Name="ProductFeatures"
         ToEnd="ProductFeature" />
+      <NavigationProperty
+        Association="License_Product"
+        FromEnd="Product"
+        Name="Licenses"
+        ToEnd="License" />
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -397,6 +710,11 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Association="LicenseProductFeature_ProductFeature"
+        FromEnd="ProductFeature"
+        Name="LicenseProductFeatures"
+        ToEnd="LicenseProductFeature" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -470,6 +788,280 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Association="License_Customer"
+        FromEnd="Customer"
+        Name="Licenses"
+        ToEnd="License" />
     </EntityType.Properties>
   </EntityType>
+  <EntityType
+    Name="License">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="License_Product"
+        FromEnd="License"
+        Name="Product"
+        ToEnd="Product" />
+      <EntityProperty
+        Name="LicenseId"
+        PropertyType=":Guid?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <IncludeInUniqueIndex />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Type"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="Trial License"
+            Value="Trial" />
+          <SupportedValue
+            DisplayName="Standard License"
+            Value="Standard" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Quantity"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Expiration"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="License_Customer"
+        FromEnd="License"
+        Name="Customer"
+        ToEnd="Customer" />
+      <NavigationProperty
+        Association="LicenseProductFeature_License"
+        FromEnd="License"
+        Name="LicenseProductFeatures"
+        ToEnd="LicenseProductFeature" />
+      <NavigationProperty
+        Association="LicenseAdditionalAttribute_License"
+        FromEnd="License"
+        Name="LicenseAdditionalAttributes"
+        ToEnd="LicenseAdditionalAttribute" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="License_Product">
+    <AssociationEnd
+      EntityType="License"
+      Multiplicity="Many"
+      Name="License" />
+    <AssociationEnd
+      EntityType="Product"
+      Multiplicity="One"
+      Name="Product">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="License_Customer">
+    <AssociationEnd
+      EntityType="License"
+      Multiplicity="Many"
+      Name="License" />
+    <AssociationEnd
+      EntityType="Customer"
+      Multiplicity="One"
+      Name="Customer">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <EntityType
+    Name="LicenseProductFeature">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="LicenseProductFeature_License"
+        FromEnd="LicenseProductFeature"
+        Name="License"
+        ToEnd="License" />
+      <NavigationProperty
+        Association="LicenseProductFeature_ProductFeature"
+        FromEnd="LicenseProductFeature"
+        Name="ProductFeature"
+        ToEnd="ProductFeature" />
+      <EntityProperty
+        Name="Value"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="LicenseProductFeature_License">
+    <AssociationEnd
+      EntityType="LicenseProductFeature"
+      Multiplicity="Many"
+      Name="LicenseProductFeature" />
+    <AssociationEnd
+      EntityType="License"
+      Multiplicity="One"
+      Name="License">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="LicenseProductFeature_ProductFeature">
+    <AssociationEnd
+      EntityType="LicenseProductFeature"
+      Multiplicity="Many"
+      Name="LicenseProductFeature" />
+    <AssociationEnd
+      EntityType="ProductFeature"
+      Multiplicity="One"
+      Name="ProductFeature">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <EntityType
+    Name="LicenseAdditionalAttribute">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="LicenseAdditionalAttribute_License"
+        FromEnd="LicenseAdditionalAttribute"
+        Name="License"
+        ToEnd="License" />
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Value"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="LicenseAdditionalAttribute_License">
+    <AssociationEnd
+      EntityType="LicenseAdditionalAttribute"
+      Multiplicity="Many"
+      Name="LicenseAdditionalAttribute" />
+    <AssociationEnd
+      EntityType="License"
+      Multiplicity="One"
+      Name="License">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
 </ModelFragment>

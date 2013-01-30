@@ -132,6 +132,150 @@ namespace LightSwitchApplication
         partial void ProductFeatures_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.ProductFeature, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_Inserting(global::LightSwitchApplication.Customer entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_Inserted(global::LightSwitchApplication.Customer entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_Updating(global::LightSwitchApplication.Customer entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_Updated(global::LightSwitchApplication.Customer entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_Deleting(global::LightSwitchApplication.Customer entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_Deleted(global::LightSwitchApplication.Customer entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_Validate(global::LightSwitchApplication.Customer entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Customers_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Customer, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_Inserting(global::LightSwitchApplication.License entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_Inserted(global::LightSwitchApplication.License entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_Updating(global::LightSwitchApplication.License entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_Updated(global::LightSwitchApplication.License entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_Deleting(global::LightSwitchApplication.License entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_Deleted(global::LightSwitchApplication.License entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_Validate(global::LightSwitchApplication.License entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Licenses_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.License, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_Inserting(global::LightSwitchApplication.LicenseProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_Inserted(global::LightSwitchApplication.LicenseProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_Updating(global::LightSwitchApplication.LicenseProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_Updated(global::LightSwitchApplication.LicenseProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_Deleting(global::LightSwitchApplication.LicenseProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_Deleted(global::LightSwitchApplication.LicenseProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_Validate(global::LightSwitchApplication.LicenseProductFeature entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseProductFeatures_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.LicenseProductFeature, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_Inserting(global::LightSwitchApplication.LicenseAdditionalAttribute entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_Inserted(global::LightSwitchApplication.LicenseAdditionalAttribute entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_Updating(global::LightSwitchApplication.LicenseAdditionalAttribute entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_Updated(global::LightSwitchApplication.LicenseAdditionalAttribute entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_Deleting(global::LightSwitchApplication.LicenseAdditionalAttribute entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_Deleted(global::LightSwitchApplication.LicenseAdditionalAttribute entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_Validate(global::LightSwitchApplication.LicenseAdditionalAttribute entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LicenseAdditionalAttributes_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.LicenseAdditionalAttribute, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -313,6 +457,306 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.ProductFeature, bool>> filter = null;
                 d.ProductFeatures_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Customer>
+                __CustomersEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Customer>(
+                    "Customers",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Customers_Filter);
+            private static bool __Customers_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Customers_CanInsert(ref result);
+                return result;
+            }
+            private static bool __Customers_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Customers_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __Customers_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Customers_CanDelete(ref result);
+                return result;
+            }
+            private static bool __Customers_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Customers_CanRead(ref result);
+                return result;
+            }
+            private static void __Customers_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Customer e)
+            {
+                d.Customers_Inserting(e);
+            }
+            private static void __Customers_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Customer e)
+            {
+                d.Customers_Inserted(e);
+            }
+            private static void __Customers_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Customer e)
+            {
+                d.Customers_Updating(e);
+            }
+            private static void __Customers_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Customer e)
+            {
+                d.Customers_Updated(e);
+            }
+            private static void __Customers_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Customer e)
+            {
+                d.Customers_Deleting(e);
+            }
+            private static void __Customers_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Customer e)
+            {
+                d.Customers_Deleted(e);
+            }
+            private static void __Customers_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Customer e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.Customers_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Customer, bool>> __Customers_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Customer, bool>> filter = null;
+                d.Customers_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.License>
+                __LicensesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.License>(
+                    "Licenses",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Licenses_Filter);
+            private static bool __Licenses_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Licenses_CanInsert(ref result);
+                return result;
+            }
+            private static bool __Licenses_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Licenses_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __Licenses_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Licenses_CanDelete(ref result);
+                return result;
+            }
+            private static bool __Licenses_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Licenses_CanRead(ref result);
+                return result;
+            }
+            private static void __Licenses_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.License e)
+            {
+                d.Licenses_Inserting(e);
+            }
+            private static void __Licenses_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.License e)
+            {
+                d.Licenses_Inserted(e);
+            }
+            private static void __Licenses_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.License e)
+            {
+                d.Licenses_Updating(e);
+            }
+            private static void __Licenses_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.License e)
+            {
+                d.Licenses_Updated(e);
+            }
+            private static void __Licenses_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.License e)
+            {
+                d.Licenses_Deleting(e);
+            }
+            private static void __Licenses_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.License e)
+            {
+                d.Licenses_Deleted(e);
+            }
+            private static void __Licenses_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.License e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.Licenses_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.License, bool>> __Licenses_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.License, bool>> filter = null;
+                d.Licenses_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.LicenseProductFeature>
+                __LicenseProductFeaturesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.LicenseProductFeature>(
+                    "LicenseProductFeatures",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseProductFeatures_Filter);
+            private static bool __LicenseProductFeatures_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.LicenseProductFeatures_CanInsert(ref result);
+                return result;
+            }
+            private static bool __LicenseProductFeatures_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.LicenseProductFeatures_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __LicenseProductFeatures_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.LicenseProductFeatures_CanDelete(ref result);
+                return result;
+            }
+            private static bool __LicenseProductFeatures_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.LicenseProductFeatures_CanRead(ref result);
+                return result;
+            }
+            private static void __LicenseProductFeatures_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseProductFeature e)
+            {
+                d.LicenseProductFeatures_Inserting(e);
+            }
+            private static void __LicenseProductFeatures_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseProductFeature e)
+            {
+                d.LicenseProductFeatures_Inserted(e);
+            }
+            private static void __LicenseProductFeatures_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseProductFeature e)
+            {
+                d.LicenseProductFeatures_Updating(e);
+            }
+            private static void __LicenseProductFeatures_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseProductFeature e)
+            {
+                d.LicenseProductFeatures_Updated(e);
+            }
+            private static void __LicenseProductFeatures_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseProductFeature e)
+            {
+                d.LicenseProductFeatures_Deleting(e);
+            }
+            private static void __LicenseProductFeatures_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseProductFeature e)
+            {
+                d.LicenseProductFeatures_Deleted(e);
+            }
+            private static void __LicenseProductFeatures_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseProductFeature e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.LicenseProductFeatures_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.LicenseProductFeature, bool>> __LicenseProductFeatures_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.LicenseProductFeature, bool>> filter = null;
+                d.LicenseProductFeatures_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.LicenseAdditionalAttribute>
+                __LicenseAdditionalAttributesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.LicenseAdditionalAttribute>(
+                    "LicenseAdditionalAttributes",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__LicenseAdditionalAttributes_Filter);
+            private static bool __LicenseAdditionalAttributes_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.LicenseAdditionalAttributes_CanInsert(ref result);
+                return result;
+            }
+            private static bool __LicenseAdditionalAttributes_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.LicenseAdditionalAttributes_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __LicenseAdditionalAttributes_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.LicenseAdditionalAttributes_CanDelete(ref result);
+                return result;
+            }
+            private static bool __LicenseAdditionalAttributes_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.LicenseAdditionalAttributes_CanRead(ref result);
+                return result;
+            }
+            private static void __LicenseAdditionalAttributes_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseAdditionalAttribute e)
+            {
+                d.LicenseAdditionalAttributes_Inserting(e);
+            }
+            private static void __LicenseAdditionalAttributes_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseAdditionalAttribute e)
+            {
+                d.LicenseAdditionalAttributes_Inserted(e);
+            }
+            private static void __LicenseAdditionalAttributes_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseAdditionalAttribute e)
+            {
+                d.LicenseAdditionalAttributes_Updating(e);
+            }
+            private static void __LicenseAdditionalAttributes_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseAdditionalAttribute e)
+            {
+                d.LicenseAdditionalAttributes_Updated(e);
+            }
+            private static void __LicenseAdditionalAttributes_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseAdditionalAttribute e)
+            {
+                d.LicenseAdditionalAttributes_Deleting(e);
+            }
+            private static void __LicenseAdditionalAttributes_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseAdditionalAttribute e)
+            {
+                d.LicenseAdditionalAttributes_Deleted(e);
+            }
+            private static void __LicenseAdditionalAttributes_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.LicenseAdditionalAttribute e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.LicenseAdditionalAttributes_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.LicenseAdditionalAttribute, bool>> __LicenseAdditionalAttributes_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.LicenseAdditionalAttribute, bool>> filter = null;
+                d.LicenseAdditionalAttributes_Filter(ref filter);
                 return filter;
             }
             

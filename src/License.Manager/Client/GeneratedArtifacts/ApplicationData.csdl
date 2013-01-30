@@ -9,6 +9,7 @@
     <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Description" Type="Edm.String" MaxLength="255" />
     <NavigationProperty Name="ProductFeatures" Relationship="LightSwitchApplication.ProductFeature_Product" ToRole="ProductFeature" FromRole="Product" />
+    <NavigationProperty Name="Licenses" Relationship="LightSwitchApplication.License_Product" ToRole="License" FromRole="Product" />
   </EntityType>
   <EntityType Name="ProductFeature">
     <Key>
@@ -19,6 +20,58 @@
     <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="ProductFeature_Product" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="Product" Relationship="LightSwitchApplication.ProductFeature_Product" ToRole="Product" FromRole="ProductFeature" />
+    <NavigationProperty Name="LicenseProductFeatures" Relationship="LightSwitchApplication.LicenseProductFeature_ProductFeature" ToRole="LicenseProductFeature" FromRole="ProductFeature" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Company" Type="Edm.String" MaxLength="255" />
+    <Property Name="EMail" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <NavigationProperty Name="Licenses" Relationship="LightSwitchApplication.License_Customer" ToRole="License" FromRole="Customer" />
+  </EntityType>
+  <EntityType Name="License">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="LicenseId" Type="Edm.Guid" />
+    <Property Name="Type" Type="Edm.String" MaxLength="255" />
+    <Property Name="Quantity" Type="Edm.Int32" />
+    <Property Name="Expiration" Type="Edm.DateTime" />
+    <Property Name="License_Product" Type="Edm.Int32" Nullable="false" />
+    <Property Name="License_Customer" Type="Edm.Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="LightSwitchApplication.License_Product" ToRole="Product" FromRole="License" />
+    <NavigationProperty Name="Customer" Relationship="LightSwitchApplication.License_Customer" ToRole="Customer" FromRole="License" />
+    <NavigationProperty Name="LicenseProductFeatures" Relationship="LightSwitchApplication.LicenseProductFeature_License" ToRole="LicenseProductFeature" FromRole="License" />
+    <NavigationProperty Name="LicenseAdditionalAttributes" Relationship="LightSwitchApplication.LicenseAdditionalAttribute_License" ToRole="LicenseAdditionalAttribute" FromRole="License" />
+  </EntityType>
+  <EntityType Name="LicenseProductFeature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Value" Type="Edm.String" MaxLength="255" />
+    <Property Name="LicenseProductFeature_License" Type="Edm.Int32" Nullable="false" />
+    <Property Name="LicenseProductFeature_ProductFeature" Type="Edm.Int32" Nullable="false" />
+    <NavigationProperty Name="License" Relationship="LightSwitchApplication.LicenseProductFeature_License" ToRole="License" FromRole="LicenseProductFeature" />
+    <NavigationProperty Name="ProductFeature" Relationship="LightSwitchApplication.LicenseProductFeature_ProductFeature" ToRole="ProductFeature" FromRole="LicenseProductFeature" />
+  </EntityType>
+  <EntityType Name="LicenseAdditionalAttribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Value" Type="Edm.String" MaxLength="255" />
+    <Property Name="LicenseAdditionalAttribute_License" Type="Edm.Int32" Nullable="false" />
+    <NavigationProperty Name="License" Relationship="LightSwitchApplication.LicenseAdditionalAttribute_License" ToRole="License" FromRole="LicenseAdditionalAttribute" />
   </EntityType>
   <Association Name="ProductFeature_Product">
     <End Role="Product" Type="LightSwitchApplication.Product" Multiplicity="1" />
@@ -32,12 +85,96 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="License_Product">
+    <End Role="Product" Type="LightSwitchApplication.Product" Multiplicity="1" />
+    <End Role="License" Type="LightSwitchApplication.License" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="License">
+        <PropertyRef Name="License_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="License_Customer">
+    <End Role="Customer" Type="LightSwitchApplication.Customer" Multiplicity="1" />
+    <End Role="License" Type="LightSwitchApplication.License" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="License">
+        <PropertyRef Name="License_Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LicenseProductFeature_License">
+    <End Role="License" Type="LightSwitchApplication.License" Multiplicity="1" />
+    <End Role="LicenseProductFeature" Type="LightSwitchApplication.LicenseProductFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="License">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LicenseProductFeature">
+        <PropertyRef Name="LicenseProductFeature_License" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LicenseProductFeature_ProductFeature">
+    <End Role="ProductFeature" Type="LightSwitchApplication.ProductFeature" Multiplicity="1" />
+    <End Role="LicenseProductFeature" Type="LightSwitchApplication.LicenseProductFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductFeature">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LicenseProductFeature">
+        <PropertyRef Name="LicenseProductFeature_ProductFeature" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LicenseAdditionalAttribute_License">
+    <End Role="License" Type="LightSwitchApplication.License" Multiplicity="1" />
+    <End Role="LicenseAdditionalAttribute" Type="LightSwitchApplication.LicenseAdditionalAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="License">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LicenseAdditionalAttribute">
+        <PropertyRef Name="LicenseAdditionalAttribute_License" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Products" EntityType="LightSwitchApplication.Product" />
     <EntitySet Name="ProductFeatures" EntityType="LightSwitchApplication.ProductFeature" />
+    <EntitySet Name="Customers" EntityType="LightSwitchApplication.Customer" />
+    <EntitySet Name="Licenses" EntityType="LightSwitchApplication.License" />
+    <EntitySet Name="LicenseProductFeatures" EntityType="LightSwitchApplication.LicenseProductFeature" />
+    <EntitySet Name="LicenseAdditionalAttributes" EntityType="LightSwitchApplication.LicenseAdditionalAttribute" />
     <AssociationSet Name="ProductFeature_Product" Association="LightSwitchApplication.ProductFeature_Product">
       <End Role="Product" EntitySet="Products" />
       <End Role="ProductFeature" EntitySet="ProductFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="License_Product" Association="LightSwitchApplication.License_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="License" EntitySet="Licenses" />
+    </AssociationSet>
+    <AssociationSet Name="License_Customer" Association="LightSwitchApplication.License_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="License" EntitySet="Licenses" />
+    </AssociationSet>
+    <AssociationSet Name="LicenseProductFeature_License" Association="LightSwitchApplication.LicenseProductFeature_License">
+      <End Role="License" EntitySet="Licenses" />
+      <End Role="LicenseProductFeature" EntitySet="LicenseProductFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="LicenseProductFeature_ProductFeature" Association="LightSwitchApplication.LicenseProductFeature_ProductFeature">
+      <End Role="ProductFeature" EntitySet="ProductFeatures" />
+      <End Role="LicenseProductFeature" EntitySet="LicenseProductFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="LicenseAdditionalAttribute_License" Association="LightSwitchApplication.LicenseAdditionalAttribute_License">
+      <End Role="License" EntitySet="Licenses" />
+      <End Role="LicenseAdditionalAttribute" EntitySet="LicenseAdditionalAttributes" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

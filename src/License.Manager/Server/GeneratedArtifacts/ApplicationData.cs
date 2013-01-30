@@ -20,6 +20,11 @@ using System.Xml.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "ProductFeature_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Product), "ProductFeature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.ProductFeature), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "License_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Product), "License", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.License), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "License_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Customer), "License", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.License), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "LicenseProductFeature_License", "License", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.License), "LicenseProductFeature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.LicenseProductFeature), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "LicenseProductFeature_ProductFeature", "ProductFeature", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.ProductFeature), "LicenseProductFeature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.LicenseProductFeature), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "LicenseAdditionalAttribute_License", "License", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.License), "LicenseAdditionalAttribute", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.LicenseAdditionalAttribute), true)]
 
 #endregion
 
@@ -99,6 +104,70 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<ProductFeature> _ProductFeatures;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Customer> Customers
+        {
+            get
+            {
+                if ((_Customers == null))
+                {
+                    _Customers = base.CreateObjectSet<Customer>("Customers");
+                }
+                return _Customers;
+            }
+        }
+        private ObjectSet<Customer> _Customers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<License> Licenses
+        {
+            get
+            {
+                if ((_Licenses == null))
+                {
+                    _Licenses = base.CreateObjectSet<License>("Licenses");
+                }
+                return _Licenses;
+            }
+        }
+        private ObjectSet<License> _Licenses;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<LicenseProductFeature> LicenseProductFeatures
+        {
+            get
+            {
+                if ((_LicenseProductFeatures == null))
+                {
+                    _LicenseProductFeatures = base.CreateObjectSet<LicenseProductFeature>("LicenseProductFeatures");
+                }
+                return _LicenseProductFeatures;
+            }
+        }
+        private ObjectSet<LicenseProductFeature> _LicenseProductFeatures;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<LicenseAdditionalAttribute> LicenseAdditionalAttributes
+        {
+            get
+            {
+                if ((_LicenseAdditionalAttributes == null))
+                {
+                    _LicenseAdditionalAttributes = base.CreateObjectSet<LicenseAdditionalAttribute>("LicenseAdditionalAttributes");
+                }
+                return _LicenseAdditionalAttributes;
+            }
+        }
+        private ObjectSet<LicenseAdditionalAttribute> _LicenseAdditionalAttributes;
 
         #endregion
 
@@ -119,6 +188,38 @@ namespace ApplicationData.Implementation
         {
             base.AddObject("ProductFeatures", productFeature);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Customers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCustomers(Customer customer)
+        {
+            base.AddObject("Customers", customer);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Licenses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLicenses(License license)
+        {
+            base.AddObject("Licenses", license);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the LicenseProductFeatures EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLicenseProductFeatures(LicenseProductFeature licenseProductFeature)
+        {
+            base.AddObject("LicenseProductFeatures", licenseProductFeature);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the LicenseAdditionalAttributes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLicenseAdditionalAttributes(LicenseAdditionalAttribute licenseAdditionalAttribute)
+        {
+            base.AddObject("LicenseAdditionalAttributes", licenseAdditionalAttribute);
+        }
 
         #endregion
 
@@ -127,6 +228,986 @@ namespace ApplicationData.Implementation
     #endregion
 
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Customer")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Customer : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Customer object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="eMail">Initial value of the EMail property.</param>
+        public static Customer CreateCustomer(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.String eMail)
+        {
+            Customer customer = new Customer();
+            customer.Id = id;
+            customer.RowVersion = rowVersion;
+            customer.Name = name;
+            customer.EMail = eMail;
+            return customer;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = value;
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Company
+        {
+            get
+            {
+                return _Company;
+            }
+            set
+            {
+                OnCompanyChanging(value);
+                ReportPropertyChanging("Company");
+                _Company = value;
+                ReportPropertyChanged("Company");
+                OnCompanyChanged();
+            }
+        }
+        private global::System.String _Company;
+        partial void OnCompanyChanging(global::System.String value);
+        partial void OnCompanyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String EMail
+        {
+            get
+            {
+                return _EMail;
+            }
+            set
+            {
+                OnEMailChanging(value);
+                ReportPropertyChanging("EMail");
+                _EMail = value;
+                ReportPropertyChanged("EMail");
+                OnEMailChanged();
+            }
+        }
+        private global::System.String _EMail;
+        partial void OnEMailChanging(global::System.String value);
+        partial void OnEMailChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "License_Customer", "License")]
+        public EntityCollection<License> Licenses
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<License>("LightSwitchApplication.License_Customer", "License");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<License>("LightSwitchApplication.License_Customer", "License", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="License")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class License : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new License object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        /// <param name="license_Product">Initial value of the License_Product property.</param>
+        /// <param name="license_Customer">Initial value of the License_Customer property.</param>
+        public static License CreateLicense(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 license_Product, global::System.Int32 license_Customer)
+        {
+            License license = new License();
+            license.Id = id;
+            license.RowVersion = rowVersion;
+            license.License_Product = license_Product;
+            license.License_Customer = license_Customer;
+            return license;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Guid> LicenseId
+        {
+            get
+            {
+                return _LicenseId;
+            }
+            set
+            {
+                OnLicenseIdChanging(value);
+                ReportPropertyChanging("LicenseId");
+                _LicenseId = value;
+                ReportPropertyChanged("LicenseId");
+                OnLicenseIdChanged();
+            }
+        }
+        private Nullable<global::System.Guid> _LicenseId;
+        partial void OnLicenseIdChanging(Nullable<global::System.Guid> value);
+        partial void OnLicenseIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Type
+        {
+            get
+            {
+                return _Type;
+            }
+            set
+            {
+                OnTypeChanging(value);
+                ReportPropertyChanging("Type");
+                _Type = value;
+                ReportPropertyChanged("Type");
+                OnTypeChanged();
+            }
+        }
+        private global::System.String _Type;
+        partial void OnTypeChanging(global::System.String value);
+        partial void OnTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Quantity
+        {
+            get
+            {
+                return _Quantity;
+            }
+            set
+            {
+                OnQuantityChanging(value);
+                ReportPropertyChanging("Quantity");
+                _Quantity = value;
+                ReportPropertyChanged("Quantity");
+                OnQuantityChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Quantity;
+        partial void OnQuantityChanging(Nullable<global::System.Int32> value);
+        partial void OnQuantityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Expiration
+        {
+            get
+            {
+                return _Expiration;
+            }
+            set
+            {
+                OnExpirationChanging(value);
+                ReportPropertyChanging("Expiration");
+                _Expiration = value;
+                ReportPropertyChanged("Expiration");
+                OnExpirationChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Expiration;
+        partial void OnExpirationChanging(Nullable<global::System.DateTime> value);
+        partial void OnExpirationChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 License_Product
+        {
+            get
+            {
+                return _License_Product;
+            }
+            set
+            {
+                OnLicense_ProductChanging(value);
+                ReportPropertyChanging("License_Product");
+                _License_Product = value;
+                ReportPropertyChanged("License_Product");
+                OnLicense_ProductChanged();
+            }
+        }
+        private global::System.Int32 _License_Product;
+        partial void OnLicense_ProductChanging(global::System.Int32 value);
+        partial void OnLicense_ProductChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 License_Customer
+        {
+            get
+            {
+                return _License_Customer;
+            }
+            set
+            {
+                OnLicense_CustomerChanging(value);
+                ReportPropertyChanging("License_Customer");
+                _License_Customer = value;
+                ReportPropertyChanged("License_Customer");
+                OnLicense_CustomerChanged();
+            }
+        }
+        private global::System.Int32 _License_Customer;
+        partial void OnLicense_CustomerChanging(global::System.Int32 value);
+        partial void OnLicense_CustomerChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "License_Product", "Product")]
+        public Product Product
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.License_Product", "Product").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.License_Product", "Product").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Product> ProductReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.License_Product", "Product");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("LightSwitchApplication.License_Product", "Product", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "License_Customer", "Customer")]
+        public Customer Customer
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("LightSwitchApplication.License_Customer", "Customer").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("LightSwitchApplication.License_Customer", "Customer").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Customer> CustomerReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Customer>("LightSwitchApplication.License_Customer", "Customer");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Customer>("LightSwitchApplication.License_Customer", "Customer", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "LicenseProductFeature_License", "LicenseProductFeature")]
+        public EntityCollection<LicenseProductFeature> LicenseProductFeatures
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<LicenseProductFeature>("LightSwitchApplication.LicenseProductFeature_License", "LicenseProductFeature");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<LicenseProductFeature>("LightSwitchApplication.LicenseProductFeature_License", "LicenseProductFeature", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "LicenseAdditionalAttribute_License", "LicenseAdditionalAttribute")]
+        public EntityCollection<LicenseAdditionalAttribute> LicenseAdditionalAttributes
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<LicenseAdditionalAttribute>("LightSwitchApplication.LicenseAdditionalAttribute_License", "LicenseAdditionalAttribute");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<LicenseAdditionalAttribute>("LightSwitchApplication.LicenseAdditionalAttribute_License", "LicenseAdditionalAttribute", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="LicenseAdditionalAttribute")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class LicenseAdditionalAttribute : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new LicenseAdditionalAttribute object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="licenseAdditionalAttribute_License">Initial value of the LicenseAdditionalAttribute_License property.</param>
+        public static LicenseAdditionalAttribute CreateLicenseAdditionalAttribute(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.Int32 licenseAdditionalAttribute_License)
+        {
+            LicenseAdditionalAttribute licenseAdditionalAttribute = new LicenseAdditionalAttribute();
+            licenseAdditionalAttribute.Id = id;
+            licenseAdditionalAttribute.RowVersion = rowVersion;
+            licenseAdditionalAttribute.Name = name;
+            licenseAdditionalAttribute.LicenseAdditionalAttribute_License = licenseAdditionalAttribute_License;
+            return licenseAdditionalAttribute;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = value;
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Value
+        {
+            get
+            {
+                return _Value;
+            }
+            set
+            {
+                OnValueChanging(value);
+                ReportPropertyChanging("Value");
+                _Value = value;
+                ReportPropertyChanged("Value");
+                OnValueChanged();
+            }
+        }
+        private global::System.String _Value;
+        partial void OnValueChanging(global::System.String value);
+        partial void OnValueChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 LicenseAdditionalAttribute_License
+        {
+            get
+            {
+                return _LicenseAdditionalAttribute_License;
+            }
+            set
+            {
+                OnLicenseAdditionalAttribute_LicenseChanging(value);
+                ReportPropertyChanging("LicenseAdditionalAttribute_License");
+                _LicenseAdditionalAttribute_License = value;
+                ReportPropertyChanged("LicenseAdditionalAttribute_License");
+                OnLicenseAdditionalAttribute_LicenseChanged();
+            }
+        }
+        private global::System.Int32 _LicenseAdditionalAttribute_License;
+        partial void OnLicenseAdditionalAttribute_LicenseChanging(global::System.Int32 value);
+        partial void OnLicenseAdditionalAttribute_LicenseChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "LicenseAdditionalAttribute_License", "License")]
+        public License License
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<License>("LightSwitchApplication.LicenseAdditionalAttribute_License", "License").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<License>("LightSwitchApplication.LicenseAdditionalAttribute_License", "License").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<License> LicenseReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<License>("LightSwitchApplication.LicenseAdditionalAttribute_License", "License");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<License>("LightSwitchApplication.LicenseAdditionalAttribute_License", "License", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="LicenseProductFeature")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class LicenseProductFeature : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new LicenseProductFeature object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        /// <param name="licenseProductFeature_License">Initial value of the LicenseProductFeature_License property.</param>
+        /// <param name="licenseProductFeature_ProductFeature">Initial value of the LicenseProductFeature_ProductFeature property.</param>
+        public static LicenseProductFeature CreateLicenseProductFeature(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 licenseProductFeature_License, global::System.Int32 licenseProductFeature_ProductFeature)
+        {
+            LicenseProductFeature licenseProductFeature = new LicenseProductFeature();
+            licenseProductFeature.Id = id;
+            licenseProductFeature.RowVersion = rowVersion;
+            licenseProductFeature.LicenseProductFeature_License = licenseProductFeature_License;
+            licenseProductFeature.LicenseProductFeature_ProductFeature = licenseProductFeature_ProductFeature;
+            return licenseProductFeature;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Value
+        {
+            get
+            {
+                return _Value;
+            }
+            set
+            {
+                OnValueChanging(value);
+                ReportPropertyChanging("Value");
+                _Value = value;
+                ReportPropertyChanged("Value");
+                OnValueChanged();
+            }
+        }
+        private global::System.String _Value;
+        partial void OnValueChanging(global::System.String value);
+        partial void OnValueChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 LicenseProductFeature_License
+        {
+            get
+            {
+                return _LicenseProductFeature_License;
+            }
+            set
+            {
+                OnLicenseProductFeature_LicenseChanging(value);
+                ReportPropertyChanging("LicenseProductFeature_License");
+                _LicenseProductFeature_License = value;
+                ReportPropertyChanged("LicenseProductFeature_License");
+                OnLicenseProductFeature_LicenseChanged();
+            }
+        }
+        private global::System.Int32 _LicenseProductFeature_License;
+        partial void OnLicenseProductFeature_LicenseChanging(global::System.Int32 value);
+        partial void OnLicenseProductFeature_LicenseChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 LicenseProductFeature_ProductFeature
+        {
+            get
+            {
+                return _LicenseProductFeature_ProductFeature;
+            }
+            set
+            {
+                OnLicenseProductFeature_ProductFeatureChanging(value);
+                ReportPropertyChanging("LicenseProductFeature_ProductFeature");
+                _LicenseProductFeature_ProductFeature = value;
+                ReportPropertyChanged("LicenseProductFeature_ProductFeature");
+                OnLicenseProductFeature_ProductFeatureChanged();
+            }
+        }
+        private global::System.Int32 _LicenseProductFeature_ProductFeature;
+        partial void OnLicenseProductFeature_ProductFeatureChanging(global::System.Int32 value);
+        partial void OnLicenseProductFeature_ProductFeatureChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "LicenseProductFeature_License", "License")]
+        public License License
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<License>("LightSwitchApplication.LicenseProductFeature_License", "License").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<License>("LightSwitchApplication.LicenseProductFeature_License", "License").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<License> LicenseReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<License>("LightSwitchApplication.LicenseProductFeature_License", "License");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<License>("LightSwitchApplication.LicenseProductFeature_License", "License", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "LicenseProductFeature_ProductFeature", "ProductFeature")]
+        public ProductFeature ProductFeature
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductFeature>("LightSwitchApplication.LicenseProductFeature_ProductFeature", "ProductFeature").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductFeature>("LightSwitchApplication.LicenseProductFeature_ProductFeature", "ProductFeature").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ProductFeature> ProductFeatureReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ProductFeature>("LightSwitchApplication.LicenseProductFeature_ProductFeature", "ProductFeature");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ProductFeature>("LightSwitchApplication.LicenseProductFeature_ProductFeature", "ProductFeature", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
     
     /// <summary>
     /// No Metadata Documentation available.
@@ -279,6 +1360,28 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ProductFeature>("LightSwitchApplication.ProductFeature_Product", "ProductFeature", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "License_Product", "License")]
+        public EntityCollection<License> Licenses
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<License>("LightSwitchApplication.License_Product", "License");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<License>("LightSwitchApplication.License_Product", "License", value);
                 }
             }
         }
@@ -456,6 +1559,28 @@ namespace ApplicationData.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("LightSwitchApplication.ProductFeature_Product", "Product", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "LicenseProductFeature_ProductFeature", "LicenseProductFeature")]
+        public EntityCollection<LicenseProductFeature> LicenseProductFeatures
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<LicenseProductFeature>("LightSwitchApplication.LicenseProductFeature_ProductFeature", "LicenseProductFeature");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<LicenseProductFeature>("LightSwitchApplication.LicenseProductFeature_ProductFeature", "LicenseProductFeature", value);
                 }
             }
         }

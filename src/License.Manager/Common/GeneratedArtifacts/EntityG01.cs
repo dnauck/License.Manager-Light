@@ -198,6 +198,29 @@ namespace LightSwitchApplication
             }
         }
 
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.License> Licenses
+        {
+            get
+            {
+                return global::LightSwitchApplication.Product.DetailsClass.GetValue(this, global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.Licenses);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.License> LicensesQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.Product.DetailsClass.GetQuery(this, global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.Licenses);
+            }
+        }
+
         #endregion
     
         #region Details Class
@@ -320,6 +343,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.License> Licenses
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.Licenses) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.License>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -331,6 +362,7 @@ namespace LightSwitchApplication
                 new string Name { get; set; }
                 new string Description { get; set; }
                 new global::System.Collections.IEnumerable ProductFeatures { get; }
+                new global::System.Collections.IEnumerable Licenses { get; }
             }
             #pragma warning restore 109
     
@@ -508,6 +540,26 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.ProductFeatures;
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.License>.Entry
+                    Licenses = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.License>.Entry(
+                        "Licenses",
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._Licenses_Stub,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._Licenses_GetReferencedEntities,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._Licenses_GetEntityCollection);
+                private static void _Licenses_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Product.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.License>.Data> c, global::LightSwitchApplication.Product.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Licenses, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.License> _Licenses_GetReferencedEntities(global::LightSwitchApplication.Product.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.License, global::LightSwitchApplication.License.DetailsClass>(global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.Licenses, ref d._Licenses);
+                }
+                private static global::System.Collections.IEnumerable _Licenses_GetEntityCollection(global::LightSwitchApplication.Product.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Licenses;
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -524,6 +576,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.ProductFeature>.Data _ProductFeatures;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.License>.Data _Licenses;
             
         }
     

@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 1/30/2013 9:04:19 PM
+// Generation date: 1/30/2013 9:12:13 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -93,6 +93,74 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<ProductFeature> _ProductFeatures;
         /// <summary>
+        /// There are no comments for Customers in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<Customer> Customers
+        {
+            get
+            {
+                if ((this._Customers == null))
+                {
+                    this._Customers = base.CreateQuery<Customer>("Customers");
+                }
+                return this._Customers;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<Customer> _Customers;
+        /// <summary>
+        /// There are no comments for Licenses in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<License> Licenses
+        {
+            get
+            {
+                if ((this._Licenses == null))
+                {
+                    this._Licenses = base.CreateQuery<License>("Licenses");
+                }
+                return this._Licenses;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<License> _Licenses;
+        /// <summary>
+        /// There are no comments for LicenseProductFeatures in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<LicenseProductFeature> LicenseProductFeatures
+        {
+            get
+            {
+                if ((this._LicenseProductFeatures == null))
+                {
+                    this._LicenseProductFeatures = base.CreateQuery<LicenseProductFeature>("LicenseProductFeatures");
+                }
+                return this._LicenseProductFeatures;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<LicenseProductFeature> _LicenseProductFeatures;
+        /// <summary>
+        /// There are no comments for LicenseAdditionalAttributes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<LicenseAdditionalAttribute> LicenseAdditionalAttributes
+        {
+            get
+            {
+                if ((this._LicenseAdditionalAttributes == null))
+                {
+                    this._LicenseAdditionalAttributes = base.CreateQuery<LicenseAdditionalAttribute>("LicenseAdditionalAttributes");
+                }
+                return this._LicenseAdditionalAttributes;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<LicenseAdditionalAttribute> _LicenseAdditionalAttributes;
+        /// <summary>
         /// There are no comments for Products in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -107,6 +175,38 @@ namespace LightSwitchApplication.Implementation
         public void AddToProductFeatures(ProductFeature productFeature)
         {
             base.AddObject("ProductFeatures", productFeature);
+        }
+        /// <summary>
+        /// There are no comments for Customers in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToCustomers(Customer customer)
+        {
+            base.AddObject("Customers", customer);
+        }
+        /// <summary>
+        /// There are no comments for Licenses in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToLicenses(License license)
+        {
+            base.AddObject("Licenses", license);
+        }
+        /// <summary>
+        /// There are no comments for LicenseProductFeatures in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToLicenseProductFeatures(LicenseProductFeature licenseProductFeature)
+        {
+            base.AddObject("LicenseProductFeatures", licenseProductFeature);
+        }
+        /// <summary>
+        /// There are no comments for LicenseAdditionalAttributes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToLicenseAdditionalAttributes(LicenseAdditionalAttribute licenseAdditionalAttribute)
+        {
+            base.AddObject("LicenseAdditionalAttributes", licenseAdditionalAttribute);
         }
     }
     /// <summary>
@@ -264,6 +364,25 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<ProductFeature> _ProductFeatures = new global::System.Data.Services.Client.DataServiceCollection<ProductFeature>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for Licenses in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<License> Licenses
+        {
+            get
+            {
+                this.@__Licenses.EnsureValueInitialized();
+                return this._Licenses;
+            }
+            set
+            {
+                this._Licenses = value;
+                this.OnPropertyChanged("Licenses");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<License> _Licenses = new global::System.Data.Services.Client.DataServiceCollection<License>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -460,6 +579,1095 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Product _Product;
+        /// <summary>
+        /// There are no comments for LicenseProductFeatures in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<LicenseProductFeature> LicenseProductFeatures
+        {
+            get
+            {
+                this.@__LicenseProductFeatures.EnsureValueInitialized();
+                return this._LicenseProductFeatures;
+            }
+            set
+            {
+                this._LicenseProductFeatures = value;
+                this.OnPropertyChanged("LicenseProductFeatures");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<LicenseProductFeature> _LicenseProductFeatures = new global::System.Data.Services.Client.DataServiceCollection<LicenseProductFeature>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for LightSwitchApplication.Customer in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Customers")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Customer : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Customer object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="rowVersion">Initial value of RowVersion.</param>
+        /// <param name="name">Initial value of Name.</param>
+        /// <param name="eMail">Initial value of EMail.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Customer CreateCustomer(int ID, byte[] rowVersion, string name, string eMail)
+        {
+            Customer customer = new Customer();
+            customer.Id = ID;
+            customer.RowVersion = rowVersion;
+            customer.Name = name;
+            customer.EMail = eMail;
+            return customer;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property RowVersion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                if (object.Equals(this.Name, value))
+                {
+                    return;
+                }
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Company in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Company
+        {
+            get
+            {
+                return this._Company;
+            }
+            set
+            {
+                this.OnCompanyChanging(value);
+                if (object.Equals(this.Company, value))
+                {
+                    return;
+                }
+                this._Company = value;
+                this.OnCompanyChanged();
+                this.OnPropertyChanged("Company");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Company;
+        partial void OnCompanyChanging(string value);
+        partial void OnCompanyChanged();
+        /// <summary>
+        /// There are no comments for Property EMail in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string EMail
+        {
+            get
+            {
+                return this._EMail;
+            }
+            set
+            {
+                this.OnEMailChanging(value);
+                if (object.Equals(this.EMail, value))
+                {
+                    return;
+                }
+                this._EMail = value;
+                this.OnEMailChanged();
+                this.OnPropertyChanged("EMail");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _EMail;
+        partial void OnEMailChanging(string value);
+        partial void OnEMailChanged();
+        /// <summary>
+        /// There are no comments for Licenses in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<License> Licenses
+        {
+            get
+            {
+                this.@__Licenses.EnsureValueInitialized();
+                return this._Licenses;
+            }
+            set
+            {
+                this._Licenses = value;
+                this.OnPropertyChanged("Licenses");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<License> _Licenses = new global::System.Data.Services.Client.DataServiceCollection<License>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for LightSwitchApplication.License in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Licenses")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class License : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new License object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="rowVersion">Initial value of RowVersion.</param>
+        /// <param name="license_Product">Initial value of License_Product.</param>
+        /// <param name="license_Customer">Initial value of License_Customer.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static License CreateLicense(int ID, byte[] rowVersion, int license_Product, int license_Customer)
+        {
+            License license = new License();
+            license.Id = ID;
+            license.RowVersion = rowVersion;
+            license.License_Product = license_Product;
+            license.License_Customer = license_Customer;
+            return license;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property RowVersion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// There are no comments for Property LicenseId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.Guid> LicenseId
+        {
+            get
+            {
+                return this._LicenseId;
+            }
+            set
+            {
+                this.OnLicenseIdChanging(value);
+                if (object.Equals(this.LicenseId, value))
+                {
+                    return;
+                }
+                this._LicenseId = value;
+                this.OnLicenseIdChanged();
+                this.OnPropertyChanged("LicenseId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.Guid> _LicenseId;
+        partial void OnLicenseIdChanging(global::System.Nullable<global::System.Guid> value);
+        partial void OnLicenseIdChanged();
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                if (object.Equals(this.Type, value))
+                {
+                    return;
+                }
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Type;
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Quantity in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<int> Quantity
+        {
+            get
+            {
+                return this._Quantity;
+            }
+            set
+            {
+                this.OnQuantityChanging(value);
+                if (object.Equals(this.Quantity, value))
+                {
+                    return;
+                }
+                this._Quantity = value;
+                this.OnQuantityChanged();
+                this.OnPropertyChanged("Quantity");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<int> _Quantity;
+        partial void OnQuantityChanging(global::System.Nullable<int> value);
+        partial void OnQuantityChanged();
+        /// <summary>
+        /// There are no comments for Property Expiration in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.DateTime> Expiration
+        {
+            get
+            {
+                return this._Expiration;
+            }
+            set
+            {
+                this.OnExpirationChanging(value);
+                if (object.Equals(this.Expiration, value))
+                {
+                    return;
+                }
+                this._Expiration = value;
+                this.OnExpirationChanged();
+                this.OnPropertyChanged("Expiration");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.DateTime> _Expiration;
+        partial void OnExpirationChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnExpirationChanged();
+        /// <summary>
+        /// There are no comments for Property License_Product in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int License_Product
+        {
+            get
+            {
+                return this._License_Product;
+            }
+            set
+            {
+                this.OnLicense_ProductChanging(value);
+                if (object.Equals(this.License_Product, value))
+                {
+                    return;
+                }
+                this._License_Product = value;
+                this.OnLicense_ProductChanged();
+                this.OnPropertyChanged("License_Product");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _License_Product;
+        partial void OnLicense_ProductChanging(int value);
+        partial void OnLicense_ProductChanged();
+        /// <summary>
+        /// There are no comments for Property License_Customer in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int License_Customer
+        {
+            get
+            {
+                return this._License_Customer;
+            }
+            set
+            {
+                this.OnLicense_CustomerChanging(value);
+                if (object.Equals(this.License_Customer, value))
+                {
+                    return;
+                }
+                this._License_Customer = value;
+                this.OnLicense_CustomerChanged();
+                this.OnPropertyChanged("License_Customer");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _License_Customer;
+        partial void OnLicense_CustomerChanging(int value);
+        partial void OnLicense_CustomerChanged();
+        /// <summary>
+        /// There are no comments for Product in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Product Product
+        {
+            get
+            {
+                this.@__Product.EnsureValueInitialized();
+                return this._Product;
+            }
+            set
+            {
+                Product previous = this.Product;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._Product = null;
+                    this.@__Product.OnValueSet();
+                    previous.Licenses.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.License_Product = value.Id;
+                    }
+                    else
+                    {
+                        this.License_Product = default(int);
+                    }
+                }
+                this._Product = value;
+                this.@__Product.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__Licenses.Add(this);
+                }
+                this.___OnPropertyChanged("Product");
+                this.OnPropertyChanged("Product");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Product _Product;
+        /// <summary>
+        /// There are no comments for Customer in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Customer Customer
+        {
+            get
+            {
+                this.@__Customer.EnsureValueInitialized();
+                return this._Customer;
+            }
+            set
+            {
+                Customer previous = this.Customer;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._Customer = null;
+                    this.@__Customer.OnValueSet();
+                    previous.Licenses.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.License_Customer = value.Id;
+                    }
+                    else
+                    {
+                        this.License_Customer = default(int);
+                    }
+                }
+                this._Customer = value;
+                this.@__Customer.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__Licenses.Add(this);
+                }
+                this.___OnPropertyChanged("Customer");
+                this.OnPropertyChanged("Customer");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Customer _Customer;
+        /// <summary>
+        /// There are no comments for LicenseProductFeatures in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<LicenseProductFeature> LicenseProductFeatures
+        {
+            get
+            {
+                this.@__LicenseProductFeatures.EnsureValueInitialized();
+                return this._LicenseProductFeatures;
+            }
+            set
+            {
+                this._LicenseProductFeatures = value;
+                this.OnPropertyChanged("LicenseProductFeatures");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<LicenseProductFeature> _LicenseProductFeatures = new global::System.Data.Services.Client.DataServiceCollection<LicenseProductFeature>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for LicenseAdditionalAttributes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<LicenseAdditionalAttribute> LicenseAdditionalAttributes
+        {
+            get
+            {
+                this.@__LicenseAdditionalAttributes.EnsureValueInitialized();
+                return this._LicenseAdditionalAttributes;
+            }
+            set
+            {
+                this._LicenseAdditionalAttributes = value;
+                this.OnPropertyChanged("LicenseAdditionalAttributes");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<LicenseAdditionalAttribute> _LicenseAdditionalAttributes = new global::System.Data.Services.Client.DataServiceCollection<LicenseAdditionalAttribute>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for LightSwitchApplication.LicenseProductFeature in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("LicenseProductFeatures")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class LicenseProductFeature : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new LicenseProductFeature object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="rowVersion">Initial value of RowVersion.</param>
+        /// <param name="licenseProductFeature_License">Initial value of LicenseProductFeature_License.</param>
+        /// <param name="licenseProductFeature_ProductFeature">Initial value of LicenseProductFeature_ProductFeature.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static LicenseProductFeature CreateLicenseProductFeature(int ID, byte[] rowVersion, int licenseProductFeature_License, int licenseProductFeature_ProductFeature)
+        {
+            LicenseProductFeature licenseProductFeature = new LicenseProductFeature();
+            licenseProductFeature.Id = ID;
+            licenseProductFeature.RowVersion = rowVersion;
+            licenseProductFeature.LicenseProductFeature_License = licenseProductFeature_License;
+            licenseProductFeature.LicenseProductFeature_ProductFeature = licenseProductFeature_ProductFeature;
+            return licenseProductFeature;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property RowVersion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                if (object.Equals(this.Value, value))
+                {
+                    return;
+                }
+                this._Value = value;
+                this.OnValueChanged();
+                this.OnPropertyChanged("Value");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+        /// <summary>
+        /// There are no comments for Property LicenseProductFeature_License in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int LicenseProductFeature_License
+        {
+            get
+            {
+                return this._LicenseProductFeature_License;
+            }
+            set
+            {
+                this.OnLicenseProductFeature_LicenseChanging(value);
+                if (object.Equals(this.LicenseProductFeature_License, value))
+                {
+                    return;
+                }
+                this._LicenseProductFeature_License = value;
+                this.OnLicenseProductFeature_LicenseChanged();
+                this.OnPropertyChanged("LicenseProductFeature_License");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _LicenseProductFeature_License;
+        partial void OnLicenseProductFeature_LicenseChanging(int value);
+        partial void OnLicenseProductFeature_LicenseChanged();
+        /// <summary>
+        /// There are no comments for Property LicenseProductFeature_ProductFeature in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int LicenseProductFeature_ProductFeature
+        {
+            get
+            {
+                return this._LicenseProductFeature_ProductFeature;
+            }
+            set
+            {
+                this.OnLicenseProductFeature_ProductFeatureChanging(value);
+                if (object.Equals(this.LicenseProductFeature_ProductFeature, value))
+                {
+                    return;
+                }
+                this._LicenseProductFeature_ProductFeature = value;
+                this.OnLicenseProductFeature_ProductFeatureChanged();
+                this.OnPropertyChanged("LicenseProductFeature_ProductFeature");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _LicenseProductFeature_ProductFeature;
+        partial void OnLicenseProductFeature_ProductFeatureChanging(int value);
+        partial void OnLicenseProductFeature_ProductFeatureChanged();
+        /// <summary>
+        /// There are no comments for License in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public License License
+        {
+            get
+            {
+                this.@__License.EnsureValueInitialized();
+                return this._License;
+            }
+            set
+            {
+                License previous = this.License;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._License = null;
+                    this.@__License.OnValueSet();
+                    previous.LicenseProductFeatures.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.LicenseProductFeature_License = value.Id;
+                    }
+                    else
+                    {
+                        this.LicenseProductFeature_License = default(int);
+                    }
+                }
+                this._License = value;
+                this.@__License.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__LicenseProductFeatures.Add(this);
+                }
+                this.___OnPropertyChanged("License");
+                this.OnPropertyChanged("License");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private License _License;
+        /// <summary>
+        /// There are no comments for ProductFeature in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public ProductFeature ProductFeature
+        {
+            get
+            {
+                this.@__ProductFeature.EnsureValueInitialized();
+                return this._ProductFeature;
+            }
+            set
+            {
+                ProductFeature previous = this.ProductFeature;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._ProductFeature = null;
+                    this.@__ProductFeature.OnValueSet();
+                    previous.LicenseProductFeatures.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.LicenseProductFeature_ProductFeature = value.Id;
+                    }
+                    else
+                    {
+                        this.LicenseProductFeature_ProductFeature = default(int);
+                    }
+                }
+                this._ProductFeature = value;
+                this.@__ProductFeature.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__LicenseProductFeatures.Add(this);
+                }
+                this.___OnPropertyChanged("ProductFeature");
+                this.OnPropertyChanged("ProductFeature");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private ProductFeature _ProductFeature;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for LightSwitchApplication.LicenseAdditionalAttribute in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("LicenseAdditionalAttributes")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class LicenseAdditionalAttribute : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new LicenseAdditionalAttribute object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="rowVersion">Initial value of RowVersion.</param>
+        /// <param name="name">Initial value of Name.</param>
+        /// <param name="licenseAdditionalAttribute_License">Initial value of LicenseAdditionalAttribute_License.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static LicenseAdditionalAttribute CreateLicenseAdditionalAttribute(int ID, byte[] rowVersion, string name, int licenseAdditionalAttribute_License)
+        {
+            LicenseAdditionalAttribute licenseAdditionalAttribute = new LicenseAdditionalAttribute();
+            licenseAdditionalAttribute.Id = ID;
+            licenseAdditionalAttribute.RowVersion = rowVersion;
+            licenseAdditionalAttribute.Name = name;
+            licenseAdditionalAttribute.LicenseAdditionalAttribute_License = licenseAdditionalAttribute_License;
+            return licenseAdditionalAttribute;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property RowVersion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                if (object.Equals(this.Name, value))
+                {
+                    return;
+                }
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                if (object.Equals(this.Value, value))
+                {
+                    return;
+                }
+                this._Value = value;
+                this.OnValueChanged();
+                this.OnPropertyChanged("Value");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+        /// <summary>
+        /// There are no comments for Property LicenseAdditionalAttribute_License in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int LicenseAdditionalAttribute_License
+        {
+            get
+            {
+                return this._LicenseAdditionalAttribute_License;
+            }
+            set
+            {
+                this.OnLicenseAdditionalAttribute_LicenseChanging(value);
+                if (object.Equals(this.LicenseAdditionalAttribute_License, value))
+                {
+                    return;
+                }
+                this._LicenseAdditionalAttribute_License = value;
+                this.OnLicenseAdditionalAttribute_LicenseChanged();
+                this.OnPropertyChanged("LicenseAdditionalAttribute_License");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _LicenseAdditionalAttribute_License;
+        partial void OnLicenseAdditionalAttribute_LicenseChanging(int value);
+        partial void OnLicenseAdditionalAttribute_LicenseChanged();
+        /// <summary>
+        /// There are no comments for License in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public License License
+        {
+            get
+            {
+                this.@__License.EnsureValueInitialized();
+                return this._License;
+            }
+            set
+            {
+                License previous = this.License;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._License = null;
+                    this.@__License.OnValueSet();
+                    previous.LicenseAdditionalAttributes.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.LicenseAdditionalAttribute_License = value.Id;
+                    }
+                    else
+                    {
+                        this.LicenseAdditionalAttribute_License = default(int);
+                    }
+                }
+                this._License = value;
+                this.@__License.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__LicenseAdditionalAttributes.Add(this);
+                }
+                this.___OnPropertyChanged("License");
+                this.OnPropertyChanged("License");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private License _License;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

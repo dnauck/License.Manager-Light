@@ -63,6 +63,32 @@ namespace LightSwitchApplication.Implementation
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ProductFeature> ___ProductFeatures;
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Product.DetailsClass.IImplementation.Licenses
+        {
+            get
+            {
+                return this.Licenses;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.License> __Licenses
+        {
+            get
+            {
+                if (this.___Licenses == null)
+                {
+                    this.___Licenses = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.License>(
+                        this,
+                        "Licenses",
+                        () => this._Licenses,
+                        e => global::System.Object.Equals(e.License_Product, this.Id));
+                }
+                return this.___Licenses;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.License> ___Licenses;
+        
     }
     #endregion
     
@@ -126,6 +152,430 @@ namespace LightSwitchApplication.Implementation
         
         private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product> ___Product;
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.ProductFeature.DetailsClass.IImplementation.LicenseProductFeatures
+        {
+            get
+            {
+                return this.LicenseProductFeatures;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseProductFeature> __LicenseProductFeatures
+        {
+            get
+            {
+                if (this.___LicenseProductFeatures == null)
+                {
+                    this.___LicenseProductFeatures = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseProductFeature>(
+                        this,
+                        "LicenseProductFeatures",
+                        () => this._LicenseProductFeatures,
+                        e => global::System.Object.Equals(e.LicenseProductFeature_ProductFeature, this.Id));
+                }
+                return this.___LicenseProductFeatures;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseProductFeature> ___LicenseProductFeatures;
+        
+    }
+    #endregion
+    
+    #region Customer
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class Customer :
+        global::LightSwitchApplication.Customer.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnNameChanged()
+        {
+            this.___OnPropertyChanged("Name");
+        }
+        
+        partial void OnCompanyChanged()
+        {
+            this.___OnPropertyChanged("Company");
+        }
+        
+        partial void OnEMailChanged()
+        {
+            this.___OnPropertyChanged("EMail");
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Customer.DetailsClass.IImplementation.Licenses
+        {
+            get
+            {
+                return this.Licenses;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.License> __Licenses
+        {
+            get
+            {
+                if (this.___Licenses == null)
+                {
+                    this.___Licenses = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.License>(
+                        this,
+                        "Licenses",
+                        () => this._Licenses,
+                        e => global::System.Object.Equals(e.License_Customer, this.Id));
+                }
+                return this.___Licenses;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.License> ___Licenses;
+        
+    }
+    #endregion
+    
+    #region License
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class License :
+        global::LightSwitchApplication.License.DetailsClass.IImplementation
+    {
+        partial void OnLicense_ProductChanged()
+        {
+            this.___OnPropertyChanged("License_Product");
+            this.___OnPropertyChanged("Product");
+        }
+        
+        partial void OnLicense_CustomerChanged()
+        {
+            this.___OnPropertyChanged("License_Customer");
+            this.___OnPropertyChanged("Customer");
+        }
+        
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnLicenseIdChanged()
+        {
+            this.___OnPropertyChanged("LicenseId");
+        }
+        
+        partial void OnTypeChanged()
+        {
+            this.___OnPropertyChanged("Type");
+        }
+        
+        partial void OnQuantityChanged()
+        {
+            this.___OnPropertyChanged("Quantity");
+        }
+        
+        partial void OnExpirationChanged()
+        {
+            this.___OnPropertyChanged("Expiration");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.License.DetailsClass.IImplementation.Product
+        {
+            get
+            {
+                return this.Product;
+            }
+            set
+            {
+                this.Product = (global::LightSwitchApplication.Implementation.Product)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product> __Product
+        {
+            get
+            {
+                if (this.___Product == null)
+                {
+                    this.___Product = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product>(
+                        this,
+                        "Product",
+                        new string[] { "License_Product" },
+                        e => global::System.Object.Equals(e.Id, this.License_Product),
+                        () => this._Product,
+                        e => this._Product = e);
+                }
+                return this.___Product;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product> ___Product;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.License.DetailsClass.IImplementation.Customer
+        {
+            get
+            {
+                return this.Customer;
+            }
+            set
+            {
+                this.Customer = (global::LightSwitchApplication.Implementation.Customer)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Customer> __Customer
+        {
+            get
+            {
+                if (this.___Customer == null)
+                {
+                    this.___Customer = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Customer>(
+                        this,
+                        "Customer",
+                        new string[] { "License_Customer" },
+                        e => global::System.Object.Equals(e.Id, this.License_Customer),
+                        () => this._Customer,
+                        e => this._Customer = e);
+                }
+                return this.___Customer;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Customer> ___Customer;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.License.DetailsClass.IImplementation.LicenseProductFeatures
+        {
+            get
+            {
+                return this.LicenseProductFeatures;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseProductFeature> __LicenseProductFeatures
+        {
+            get
+            {
+                if (this.___LicenseProductFeatures == null)
+                {
+                    this.___LicenseProductFeatures = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseProductFeature>(
+                        this,
+                        "LicenseProductFeatures",
+                        () => this._LicenseProductFeatures,
+                        e => global::System.Object.Equals(e.LicenseProductFeature_License, this.Id));
+                }
+                return this.___LicenseProductFeatures;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseProductFeature> ___LicenseProductFeatures;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.License.DetailsClass.IImplementation.LicenseAdditionalAttributes
+        {
+            get
+            {
+                return this.LicenseAdditionalAttributes;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseAdditionalAttribute> __LicenseAdditionalAttributes
+        {
+            get
+            {
+                if (this.___LicenseAdditionalAttributes == null)
+                {
+                    this.___LicenseAdditionalAttributes = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseAdditionalAttribute>(
+                        this,
+                        "LicenseAdditionalAttributes",
+                        () => this._LicenseAdditionalAttributes,
+                        e => global::System.Object.Equals(e.LicenseAdditionalAttribute_License, this.Id));
+                }
+                return this.___LicenseAdditionalAttributes;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.LicenseAdditionalAttribute> ___LicenseAdditionalAttributes;
+        
+    }
+    #endregion
+    
+    #region LicenseProductFeature
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class LicenseProductFeature :
+        global::LightSwitchApplication.LicenseProductFeature.DetailsClass.IImplementation
+    {
+        partial void OnLicenseProductFeature_LicenseChanged()
+        {
+            this.___OnPropertyChanged("LicenseProductFeature_License");
+            this.___OnPropertyChanged("License");
+        }
+        
+        partial void OnLicenseProductFeature_ProductFeatureChanged()
+        {
+            this.___OnPropertyChanged("LicenseProductFeature_ProductFeature");
+            this.___OnPropertyChanged("ProductFeature");
+        }
+        
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnValueChanged()
+        {
+            this.___OnPropertyChanged("Value");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.LicenseProductFeature.DetailsClass.IImplementation.License
+        {
+            get
+            {
+                return this.License;
+            }
+            set
+            {
+                this.License = (global::LightSwitchApplication.Implementation.License)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.License> __License
+        {
+            get
+            {
+                if (this.___License == null)
+                {
+                    this.___License = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.License>(
+                        this,
+                        "License",
+                        new string[] { "LicenseProductFeature_License" },
+                        e => global::System.Object.Equals(e.Id, this.LicenseProductFeature_License),
+                        () => this._License,
+                        e => this._License = e);
+                }
+                return this.___License;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.License> ___License;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.LicenseProductFeature.DetailsClass.IImplementation.ProductFeature
+        {
+            get
+            {
+                return this.ProductFeature;
+            }
+            set
+            {
+                this.ProductFeature = (global::LightSwitchApplication.Implementation.ProductFeature)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.ProductFeature> __ProductFeature
+        {
+            get
+            {
+                if (this.___ProductFeature == null)
+                {
+                    this.___ProductFeature = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.ProductFeature>(
+                        this,
+                        "ProductFeature",
+                        new string[] { "LicenseProductFeature_ProductFeature" },
+                        e => global::System.Object.Equals(e.Id, this.LicenseProductFeature_ProductFeature),
+                        () => this._ProductFeature,
+                        e => this._ProductFeature = e);
+                }
+                return this.___ProductFeature;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.ProductFeature> ___ProductFeature;
+        
+    }
+    #endregion
+    
+    #region LicenseAdditionalAttribute
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class LicenseAdditionalAttribute :
+        global::LightSwitchApplication.LicenseAdditionalAttribute.DetailsClass.IImplementation
+    {
+        partial void OnLicenseAdditionalAttribute_LicenseChanged()
+        {
+            this.___OnPropertyChanged("LicenseAdditionalAttribute_License");
+            this.___OnPropertyChanged("License");
+        }
+        
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnNameChanged()
+        {
+            this.___OnPropertyChanged("Name");
+        }
+        
+        partial void OnValueChanged()
+        {
+            this.___OnPropertyChanged("Value");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.LicenseAdditionalAttribute.DetailsClass.IImplementation.License
+        {
+            get
+            {
+                return this.License;
+            }
+            set
+            {
+                this.License = (global::LightSwitchApplication.Implementation.License)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.License> __License
+        {
+            get
+            {
+                if (this.___License == null)
+                {
+                    this.___License = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.License>(
+                        this,
+                        "License",
+                        new string[] { "LicenseAdditionalAttribute_License" },
+                        e => global::System.Object.Equals(e.Id, this.LicenseAdditionalAttribute_License),
+                        () => this._License,
+                        e => this._License = e);
+                }
+                return this.___License;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.License> ___License;
+        
     }
     #endregion
     
@@ -143,6 +593,22 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.ProductFeature))
             {
                 return new global::LightSwitchApplication.Implementation.ProductFeature();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.Customer))
+            {
+                return new global::LightSwitchApplication.Implementation.Customer();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.License))
+            {
+                return new global::LightSwitchApplication.Implementation.License();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.LicenseProductFeature))
+            {
+                return new global::LightSwitchApplication.Implementation.LicenseProductFeature();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.LicenseAdditionalAttribute))
+            {
+                return new global::LightSwitchApplication.Implementation.LicenseAdditionalAttribute();
             }
             return null;
         }
@@ -194,6 +660,22 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.ProductFeature) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.ProductFeature);
+            }
+            if (typeof(global::LightSwitchApplication.Customer) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.Customer);
+            }
+            if (typeof(global::LightSwitchApplication.License) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.License);
+            }
+            if (typeof(global::LightSwitchApplication.LicenseProductFeature) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.LicenseProductFeature);
+            }
+            if (typeof(global::LightSwitchApplication.LicenseAdditionalAttribute) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.LicenseAdditionalAttribute);
             }
             return null;
         }
