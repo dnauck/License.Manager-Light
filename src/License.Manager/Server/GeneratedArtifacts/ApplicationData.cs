@@ -17,6 +17,12 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
+#region EDM Relationship Metadata
+
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "ProductFeature_Product", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Product), "ProductFeature", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.ProductFeature), true)]
+
+#endregion
+
 namespace ApplicationData.Implementation
 {
     #region Contexts
@@ -77,6 +83,22 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<Product> _Products;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<ProductFeature> ProductFeatures
+        {
+            get
+            {
+                if ((_ProductFeatures == null))
+                {
+                    _ProductFeatures = base.CreateObjectSet<ProductFeature>("ProductFeatures");
+                }
+                return _ProductFeatures;
+            }
+        }
+        private ObjectSet<ProductFeature> _ProductFeatures;
 
         #endregion
 
@@ -88,6 +110,14 @@ namespace ApplicationData.Implementation
         public void AddToProducts(Product product)
         {
             base.AddObject("Products", product);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the ProductFeatures EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToProductFeatures(ProductFeature productFeature)
+        {
+            base.AddObject("ProductFeatures", productFeature);
         }
 
         #endregion
@@ -229,6 +259,209 @@ namespace ApplicationData.Implementation
         #endregion
 
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ProductFeature_Product", "ProductFeature")]
+        public EntityCollection<ProductFeature> ProductFeatures
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ProductFeature>("LightSwitchApplication.ProductFeature_Product", "ProductFeature");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ProductFeature>("LightSwitchApplication.ProductFeature_Product", "ProductFeature", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="ProductFeature")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ProductFeature : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ProductFeature object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="productFeature_Product">Initial value of the ProductFeature_Product property.</param>
+        public static ProductFeature CreateProductFeature(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String name, global::System.Int32 productFeature_Product)
+        {
+            ProductFeature productFeature = new ProductFeature();
+            productFeature.Id = id;
+            productFeature.RowVersion = rowVersion;
+            productFeature.Name = name;
+            productFeature.ProductFeature_Product = productFeature_Product;
+            return productFeature;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = value;
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ProductFeature_Product
+        {
+            get
+            {
+                return _ProductFeature_Product;
+            }
+            set
+            {
+                OnProductFeature_ProductChanging(value);
+                ReportPropertyChanging("ProductFeature_Product");
+                _ProductFeature_Product = value;
+                ReportPropertyChanged("ProductFeature_Product");
+                OnProductFeature_ProductChanged();
+            }
+        }
+        private global::System.Int32 _ProductFeature_Product;
+        partial void OnProductFeature_ProductChanging(global::System.Int32 value);
+        partial void OnProductFeature_ProductChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "ProductFeature_Product", "Product")]
+        public Product Product
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.ProductFeature_Product", "Product").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.ProductFeature_Product", "Product").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Product> ProductReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("LightSwitchApplication.ProductFeature_Product", "Product");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("LightSwitchApplication.ProductFeature_Product", "Product", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
 
     #endregion

@@ -11,5 +11,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ProductFeatures">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ProductFeature)">
+        <MappingFragment StoreEntitySet="ProductFeatures">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="ProductFeature_Product" ColumnName="ProductFeature_Product" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

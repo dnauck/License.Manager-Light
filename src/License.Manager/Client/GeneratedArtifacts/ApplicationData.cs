@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 1/30/2013 9:01:37 PM
+// Generation date: 1/30/2013 9:04:19 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -76,12 +76,37 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Product> _Products;
         /// <summary>
+        /// There are no comments for ProductFeatures in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<ProductFeature> ProductFeatures
+        {
+            get
+            {
+                if ((this._ProductFeatures == null))
+                {
+                    this._ProductFeatures = base.CreateQuery<ProductFeature>("ProductFeatures");
+                }
+                return this._ProductFeatures;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<ProductFeature> _ProductFeatures;
+        /// <summary>
         /// There are no comments for Products in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToProducts(Product product)
         {
             base.AddObject("Products", product);
+        }
+        /// <summary>
+        /// There are no comments for ProductFeatures in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToProductFeatures(ProductFeature productFeature)
+        {
+            base.AddObject("ProductFeatures", productFeature);
         }
     }
     /// <summary>
@@ -220,6 +245,221 @@ namespace LightSwitchApplication.Implementation
         private string _Description;
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for ProductFeatures in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<ProductFeature> ProductFeatures
+        {
+            get
+            {
+                this.@__ProductFeatures.EnsureValueInitialized();
+                return this._ProductFeatures;
+            }
+            set
+            {
+                this._ProductFeatures = value;
+                this.OnPropertyChanged("ProductFeatures");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ProductFeature> _ProductFeatures = new global::System.Data.Services.Client.DataServiceCollection<ProductFeature>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for LightSwitchApplication.ProductFeature in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("ProductFeatures")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class ProductFeature : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ProductFeature object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="rowVersion">Initial value of RowVersion.</param>
+        /// <param name="name">Initial value of Name.</param>
+        /// <param name="productFeature_Product">Initial value of ProductFeature_Product.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static ProductFeature CreateProductFeature(int ID, byte[] rowVersion, string name, int productFeature_Product)
+        {
+            ProductFeature productFeature = new ProductFeature();
+            productFeature.Id = ID;
+            productFeature.RowVersion = rowVersion;
+            productFeature.Name = name;
+            productFeature.ProductFeature_Product = productFeature_Product;
+            return productFeature;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property RowVersion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                if (object.Equals(this.Name, value))
+                {
+                    return;
+                }
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property ProductFeature_Product in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int ProductFeature_Product
+        {
+            get
+            {
+                return this._ProductFeature_Product;
+            }
+            set
+            {
+                this.OnProductFeature_ProductChanging(value);
+                if (object.Equals(this.ProductFeature_Product, value))
+                {
+                    return;
+                }
+                this._ProductFeature_Product = value;
+                this.OnProductFeature_ProductChanged();
+                this.OnPropertyChanged("ProductFeature_Product");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _ProductFeature_Product;
+        partial void OnProductFeature_ProductChanging(int value);
+        partial void OnProductFeature_ProductChanged();
+        /// <summary>
+        /// There are no comments for Product in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Product Product
+        {
+            get
+            {
+                this.@__Product.EnsureValueInitialized();
+                return this._Product;
+            }
+            set
+            {
+                Product previous = this.Product;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._Product = null;
+                    this.@__Product.OnValueSet();
+                    previous.ProductFeatures.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.ProductFeature_Product = value.Id;
+                    }
+                    else
+                    {
+                        this.ProductFeature_Product = default(int);
+                    }
+                }
+                this._Product = value;
+                this.@__Product.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__ProductFeatures.Add(this);
+                }
+                this.___OnPropertyChanged("Product");
+                this.OnPropertyChanged("Product");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Product _Product;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

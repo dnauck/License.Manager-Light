@@ -37,6 +37,95 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Description");
         }
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Product.DetailsClass.IImplementation.ProductFeatures
+        {
+            get
+            {
+                return this.ProductFeatures;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ProductFeature> __ProductFeatures
+        {
+            get
+            {
+                if (this.___ProductFeatures == null)
+                {
+                    this.___ProductFeatures = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ProductFeature>(
+                        this,
+                        "ProductFeatures",
+                        () => this._ProductFeatures,
+                        e => global::System.Object.Equals(e.ProductFeature_Product, this.Id));
+                }
+                return this.___ProductFeatures;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ProductFeature> ___ProductFeatures;
+        
+    }
+    #endregion
+    
+    #region ProductFeature
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class ProductFeature :
+        global::LightSwitchApplication.ProductFeature.DetailsClass.IImplementation
+    {
+        partial void OnProductFeature_ProductChanged()
+        {
+            this.___OnPropertyChanged("ProductFeature_Product");
+            this.___OnPropertyChanged("Product");
+        }
+        
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnNameChanged()
+        {
+            this.___OnPropertyChanged("Name");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.ProductFeature.DetailsClass.IImplementation.Product
+        {
+            get
+            {
+                return this.Product;
+            }
+            set
+            {
+                this.Product = (global::LightSwitchApplication.Implementation.Product)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product> __Product
+        {
+            get
+            {
+                if (this.___Product == null)
+                {
+                    this.___Product = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product>(
+                        this,
+                        "Product",
+                        new string[] { "ProductFeature_Product" },
+                        e => global::System.Object.Equals(e.Id, this.ProductFeature_Product),
+                        () => this._Product,
+                        e => this._Product = e);
+                }
+                return this.___Product;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Product> ___Product;
+        
     }
     #endregion
     
@@ -50,6 +139,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.Product))
             {
                 return new global::LightSwitchApplication.Implementation.Product();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.ProductFeature))
+            {
+                return new global::LightSwitchApplication.Implementation.ProductFeature();
             }
             return null;
         }
@@ -97,6 +190,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.Product) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.Product);
+            }
+            if (typeof(global::LightSwitchApplication.ProductFeature) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.ProductFeature);
             }
             return null;
         }

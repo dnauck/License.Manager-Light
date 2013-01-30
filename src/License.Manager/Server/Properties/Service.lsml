@@ -11,5 +11,36 @@
   <DataService
     DataProvider="EntityFrameworkDataProvider"
     EntityContainer="LightSwitchCommonModule:ApplicationData"
-    Name="ApplicationDataMapping" />
+    Name="ApplicationDataMapping">
+    <AssociationSetMapping
+      AssociationSet="ProductFeature_Products">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ProductFeature_Products" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[ProductFeature_Products]/Members[ProductFeature]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ProductFeature_Product" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[ProductFeature_Products]/Members[Product]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="ProductFeatures">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="ProductFeature_Product"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
 </ModelFragment>

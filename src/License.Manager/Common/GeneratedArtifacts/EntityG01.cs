@@ -175,6 +175,29 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Description_Changed();
 
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.ProductFeature> ProductFeatures
+        {
+            get
+            {
+                return global::LightSwitchApplication.Product.DetailsClass.GetValue(this, global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.ProductFeatures);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.ProductFeature> ProductFeaturesQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.Product.DetailsClass.GetQuery(this, global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.ProductFeatures);
+            }
+        }
+
         #endregion
     
         #region Details Class
@@ -289,6 +312,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.ProductFeature> ProductFeatures
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.ProductFeatures) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.ProductFeature>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -299,6 +330,7 @@ namespace LightSwitchApplication
                 new byte[] RowVersion { get; set; }
                 new string Name { get; set; }
                 new string Description { get; set; }
+                new global::System.Collections.IEnumerable ProductFeatures { get; }
             }
             #pragma warning restore 109
     
@@ -456,6 +488,26 @@ namespace LightSwitchApplication
                     e.Description_Changed();
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.ProductFeature>.Entry
+                    ProductFeatures = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.ProductFeature>.Entry(
+                        "ProductFeatures",
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._ProductFeatures_Stub,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._ProductFeatures_GetReferencedEntities,
+                        global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties._ProductFeatures_GetEntityCollection);
+                private static void _ProductFeatures_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Product.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.ProductFeature>.Data> c, global::LightSwitchApplication.Product.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ProductFeatures, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.ProductFeature> _ProductFeatures_GetReferencedEntities(global::LightSwitchApplication.Product.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.ProductFeature, global::LightSwitchApplication.ProductFeature.DetailsClass>(global::LightSwitchApplication.Product.DetailsClass.PropertySetProperties.ProductFeatures, ref d._ProductFeatures);
+                }
+                private static global::System.Collections.IEnumerable _ProductFeatures_GetEntityCollection(global::LightSwitchApplication.Product.DetailsClass d)
+                {
+                    return d.ImplementationEntity.ProductFeatures;
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -469,6 +521,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, string>.Data _Description;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Product, global::LightSwitchApplication.Product.DetailsClass, global::LightSwitchApplication.ProductFeature>.Data _ProductFeatures;
             
         }
     

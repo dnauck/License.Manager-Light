@@ -96,6 +96,42 @@ namespace LightSwitchApplication
         partial void Products_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Product, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_Inserting(global::LightSwitchApplication.ProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_Inserted(global::LightSwitchApplication.ProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_Updating(global::LightSwitchApplication.ProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_Updated(global::LightSwitchApplication.ProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_Deleting(global::LightSwitchApplication.ProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_Deleted(global::LightSwitchApplication.ProductFeature entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_Validate(global::LightSwitchApplication.ProductFeature entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ProductFeatures_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.ProductFeature, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -202,6 +238,81 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Product, bool>> filter = null;
                 d.Products_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.ProductFeature>
+                __ProductFeaturesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.ProductFeature>(
+                    "ProductFeatures",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__ProductFeatures_Filter);
+            private static bool __ProductFeatures_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.ProductFeatures_CanInsert(ref result);
+                return result;
+            }
+            private static bool __ProductFeatures_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.ProductFeatures_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __ProductFeatures_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.ProductFeatures_CanDelete(ref result);
+                return result;
+            }
+            private static bool __ProductFeatures_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.ProductFeatures_CanRead(ref result);
+                return result;
+            }
+            private static void __ProductFeatures_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ProductFeature e)
+            {
+                d.ProductFeatures_Inserting(e);
+            }
+            private static void __ProductFeatures_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ProductFeature e)
+            {
+                d.ProductFeatures_Inserted(e);
+            }
+            private static void __ProductFeatures_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ProductFeature e)
+            {
+                d.ProductFeatures_Updating(e);
+            }
+            private static void __ProductFeatures_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ProductFeature e)
+            {
+                d.ProductFeatures_Updated(e);
+            }
+            private static void __ProductFeatures_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ProductFeature e)
+            {
+                d.ProductFeatures_Deleting(e);
+            }
+            private static void __ProductFeatures_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ProductFeature e)
+            {
+                d.ProductFeatures_Deleted(e);
+            }
+            private static void __ProductFeatures_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.ProductFeature e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.ProductFeatures_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.ProductFeature, bool>> __ProductFeatures_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.ProductFeature, bool>> filter = null;
+                d.ProductFeatures_Filter(ref filter);
                 return filter;
             }
             

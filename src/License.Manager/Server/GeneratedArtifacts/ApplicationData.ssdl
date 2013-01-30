@@ -2,6 +2,11 @@
 <Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="ApplicationDataStore">
     <EntitySet Name="Products" EntityType="ApplicationDataStore.Product" store:Type="Tables" Schema="dbo" Table="Products" />
+    <EntitySet Name="ProductFeatures" EntityType="ApplicationDataStore.ProductFeature" store:Type="Tables" Schema="dbo" Table="ProductFeatures" />
+    <AssociationSet Name="ProductFeature_Product" Association="ApplicationDataStore.ProductFeature_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductFeature" EntitySet="ProductFeatures" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Product">
     <Key>
@@ -12,4 +17,25 @@
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="ProductFeature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ProductFeature_Product" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ProductFeature_Product">
+    <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="1" />
+    <End Role="ProductFeature" Type="ApplicationDataStore.ProductFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductFeature">
+        <PropertyRef Name="ProductFeature_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

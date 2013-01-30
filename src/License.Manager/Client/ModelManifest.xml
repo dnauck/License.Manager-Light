@@ -2,6 +2,6 @@
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
     <Document FullPath="C:\Dev\License.Manager\src\License.Manager\Client\Properties\Client.lsml" Checksum="793296049518B32580F7C7A91DEC1785634CD985939190029AF687A73996D811" />
-    <Document FullPath="C:\Dev\License.Manager\src\License.Manager\Common\Properties\Common.lsml" Checksum="8C6D2FA4711D958468A47DE441FC3FBFB8AC3DDE42E3D93D196F3F25EED0D6BF" />
+    <Document FullPath="C:\Dev\License.Manager\src\License.Manager\Common\Properties\Common.lsml" Checksum="AC495DF4AB1E4DCFFA060858A894B421343BE14B9E251BAE1A08E3A449A8A436" />
   </Documents>
 </ModelDocumentManifest>

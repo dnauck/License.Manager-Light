@@ -8,8 +8,36 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Description" Type="Edm.String" MaxLength="255" />
+    <NavigationProperty Name="ProductFeatures" Relationship="LightSwitchApplication.ProductFeature_Product" ToRole="ProductFeature" FromRole="Product" />
   </EntityType>
+  <EntityType Name="ProductFeature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="ProductFeature_Product" Type="Edm.Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="LightSwitchApplication.ProductFeature_Product" ToRole="Product" FromRole="ProductFeature" />
+  </EntityType>
+  <Association Name="ProductFeature_Product">
+    <End Role="Product" Type="LightSwitchApplication.Product" Multiplicity="1" />
+    <End Role="ProductFeature" Type="LightSwitchApplication.ProductFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductFeature">
+        <PropertyRef Name="ProductFeature_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Products" EntityType="LightSwitchApplication.Product" />
+    <EntitySet Name="ProductFeatures" EntityType="LightSwitchApplication.ProductFeature" />
+    <AssociationSet Name="ProductFeature_Product" Association="LightSwitchApplication.ProductFeature_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductFeature" EntitySet="ProductFeatures" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>
