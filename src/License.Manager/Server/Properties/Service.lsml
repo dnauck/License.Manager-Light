@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+
+  <ServiceApplication Name="LightSwitchServiceApplication"
+                      Version="1.0.0.0">
+    <ServiceApplication.Attributes>
+      <ModuleNamespace Namespace="LightSwitchApplication" />
+    </ServiceApplication.Attributes>
+  </ServiceApplication>
+
+</ModelFragment>
