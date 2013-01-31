@@ -1733,6 +1733,18 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void LicenseAdditionalAttributes_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
+        /// <summary>
+        /// Calls the ExportLicense screen method.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void ExportLicense()
+        {
+            this.Details.Methods.ExportLicense.CreateInvocation().Execute();
+        }
+        partial void ExportLicense_CanExecute(ref bool result);
+        partial void ExportLicense_Execute();
+
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1743,6 +1755,8 @@ namespace LightSwitchApplication
             static DetailsClass()
             {
                 var initializePropertyEntry = global::LightSwitchApplication.LicenseDetail.DetailsClass.PropertySetProperties.License;
+                var initializeCommandEntry = global::LightSwitchApplication.LicenseDetail.DetailsClass.CommandSetProperties.ExportLicense;
+                var initializeMethodEntry = global::LightSwitchApplication.LicenseDetail.DetailsClass.MethodSetProperties.ExportLicense;
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1866,6 +1880,12 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass, global::LightSwitchApplication.LicenseAdditionalAttribute>.Data _LicenseAdditionalAttributes;
 
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>.Data _ExportLicenseCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>.Data _ExportLicenseMethod;
+
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1913,6 +1933,15 @@ namespace LightSwitchApplication
             public sealed class CommandSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass> ExportLicense
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>)base.GetItem(global::LightSwitchApplication.LicenseDetail.DetailsClass.CommandSetProperties.ExportLicense);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -1921,6 +1950,15 @@ namespace LightSwitchApplication
             public sealed class MethodSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass> ExportLicense
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>)base.GetItem(global::LightSwitchApplication.LicenseDetail.DetailsClass.MethodSetProperties.ExportLicense);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -2054,6 +2092,21 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class CommandSetProperties
             {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>.Entry
+                    ExportLicense = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>.Entry(
+                        "ExportLicense",
+                        global::LightSwitchApplication.LicenseDetail.DetailsClass.CommandSetProperties._ExportLicense_Stub,
+                        global::LightSwitchApplication.LicenseDetail.DetailsClass.CommandSetProperties._ExportLicense_CreateExecutableObject);
+                private static void _ExportLicense_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LicenseDetail.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>.Data> c, global::LightSwitchApplication.LicenseDetail.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ExportLicenseCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _ExportLicense_CreateExecutableObject(global::LightSwitchApplication.LicenseDetail.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.LicenseDetail.DetailsClass)d).Methods.ExportLicense.CreateInvocation();
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -2061,6 +2114,28 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class MethodSetProperties
             {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>.Entry
+                    ExportLicense = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>.Entry(
+                        "ExportLicense",
+                        global::LightSwitchApplication.LicenseDetail.DetailsClass.MethodSetProperties._ExportLicense_Stub,
+                        global::LightSwitchApplication.LicenseDetail.DetailsClass.MethodSetProperties._ExportLicense_CanInvoke,
+                        global::LightSwitchApplication.LicenseDetail.DetailsClass.MethodSetProperties._ExportLicense_InvokeMethod);
+                private static void _ExportLicense_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LicenseDetail.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.LicenseDetail, global::LightSwitchApplication.LicenseDetail.DetailsClass>.Data> c, global::LightSwitchApplication.LicenseDetail.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ExportLicenseMethod, sf);
+                }
+                private static global::System.Exception _ExportLicense_CanInvoke(global::LightSwitchApplication.LicenseDetail.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.ExportLicense_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _ExportLicense_InvokeMethod(global::LightSwitchApplication.LicenseDetail.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.ExportLicense_Execute();
+                }
+
             }
         }
     }
