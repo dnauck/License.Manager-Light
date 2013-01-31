@@ -120,6 +120,9 @@
       <HintPath>$(WCFDATASERVICESInstallPath)\bin\Silverlight\Microsoft.Data.Services.Client.SL.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Portable.Licensing">
+      <HintPath>..\..\..\packages\Portable.Licensing.0.0.0-devel\lib\portable-net40+sl4+wp7+win8\Portable.Licensing.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -182,6 +185,7 @@
     <LightSwitchModel Include="Properties\Client.lsml">
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Config.xml" />
@@ -193,6 +197,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
