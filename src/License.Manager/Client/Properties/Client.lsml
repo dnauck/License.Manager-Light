@@ -612,6 +612,10 @@
           <Generated />
         </ScreenMethod.Attributes>
       </ScreenMethod>
+      <ScreenMethod
+        Name="CopyPublicKeyToClipBoard" />
+      <ScreenMethod
+        Name="CopyPrivateKeyToClipBoard" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
@@ -762,6 +766,56 @@
             Kind="Details"
             Name="details"
             View="Microsoft.LightSwitch:ColumnsLayout">
+            <ContentItem.CommandItems>
+              <ContentItem
+                Kind="Command"
+                Name="CopyPrivateKeyToClipBoard">
+                <ContentItem.Attributes>
+                  <Description
+                    Value="Copy Private Key To Clip Board" />
+                  <DisplayName
+                    Value="Copy Private Key" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ProductDetail/Methods[CopyPrivateKeyToClipBoard]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Command"
+                Name="CopyPublicKeyToClipBoard">
+                <ContentItem.Attributes>
+                  <Description
+                    Value="Copy Public Key To Clip Board" />
+                  <DisplayName
+                    Value="Copy Public Key" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ProductDetail/Methods[CopyPublicKeyToClipBoard]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property=":RootControl/Properties[VerticalAlignment]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          ResultType=":String"
+                          Value="Bottom" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem.CommandItems>
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>

@@ -756,6 +756,30 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Licenses_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
+        /// <summary>
+        /// Calls the CopyPublicKeyToClipBoard screen method.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void CopyPublicKeyToClipBoard()
+        {
+            this.Details.Methods.CopyPublicKeyToClipBoard.CreateInvocation().Execute();
+        }
+        partial void CopyPublicKeyToClipBoard_CanExecute(ref bool result);
+        partial void CopyPublicKeyToClipBoard_Execute();
+
+        /// <summary>
+        /// Calls the CopyPrivateKeyToClipBoard screen method.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void CopyPrivateKeyToClipBoard()
+        {
+            this.Details.Methods.CopyPrivateKeyToClipBoard.CreateInvocation().Execute();
+        }
+        partial void CopyPrivateKeyToClipBoard_CanExecute(ref bool result);
+        partial void CopyPrivateKeyToClipBoard_Execute();
+
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -766,6 +790,8 @@ namespace LightSwitchApplication
             static DetailsClass()
             {
                 var initializePropertyEntry = global::LightSwitchApplication.ProductDetail.DetailsClass.PropertySetProperties.Product;
+                var initializeCommandEntry = global::LightSwitchApplication.ProductDetail.DetailsClass.CommandSetProperties.CopyPublicKeyToClipBoard;
+                var initializeMethodEntry = global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties.CopyPublicKeyToClipBoard;
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -889,6 +915,18 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass, global::LightSwitchApplication.License>.Data _Licenses;
 
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Data _CopyPublicKeyToClipBoardCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Data _CopyPrivateKeyToClipBoardCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Data _CopyPublicKeyToClipBoardMethod;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Data _CopyPrivateKeyToClipBoardMethod;
+
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -936,6 +974,23 @@ namespace LightSwitchApplication
             public sealed class CommandSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass> CopyPublicKeyToClipBoard
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>)base.GetItem(global::LightSwitchApplication.ProductDetail.DetailsClass.CommandSetProperties.CopyPublicKeyToClipBoard);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass> CopyPrivateKeyToClipBoard
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>)base.GetItem(global::LightSwitchApplication.ProductDetail.DetailsClass.CommandSetProperties.CopyPrivateKeyToClipBoard);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -944,6 +999,23 @@ namespace LightSwitchApplication
             public sealed class MethodSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass> CopyPublicKeyToClipBoard
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>)base.GetItem(global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties.CopyPublicKeyToClipBoard);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass> CopyPrivateKeyToClipBoard
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>)base.GetItem(global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties.CopyPrivateKeyToClipBoard);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -1077,6 +1149,35 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class CommandSetProperties
             {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Entry
+                    CopyPublicKeyToClipBoard = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Entry(
+                        "CopyPublicKeyToClipBoard",
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.CommandSetProperties._CopyPublicKeyToClipBoard_Stub,
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.CommandSetProperties._CopyPublicKeyToClipBoard_CreateExecutableObject);
+                private static void _CopyPublicKeyToClipBoard_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ProductDetail.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Data> c, global::LightSwitchApplication.ProductDetail.DetailsClass d, object sf)
+                {
+                    c(d, ref d._CopyPublicKeyToClipBoardCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _CopyPublicKeyToClipBoard_CreateExecutableObject(global::LightSwitchApplication.ProductDetail.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.ProductDetail.DetailsClass)d).Methods.CopyPublicKeyToClipBoard.CreateInvocation();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Entry
+                    CopyPrivateKeyToClipBoard = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Entry(
+                        "CopyPrivateKeyToClipBoard",
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.CommandSetProperties._CopyPrivateKeyToClipBoard_Stub,
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.CommandSetProperties._CopyPrivateKeyToClipBoard_CreateExecutableObject);
+                private static void _CopyPrivateKeyToClipBoard_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ProductDetail.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Data> c, global::LightSwitchApplication.ProductDetail.DetailsClass d, object sf)
+                {
+                    c(d, ref d._CopyPrivateKeyToClipBoardCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _CopyPrivateKeyToClipBoard_CreateExecutableObject(global::LightSwitchApplication.ProductDetail.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.ProductDetail.DetailsClass)d).Methods.CopyPrivateKeyToClipBoard.CreateInvocation();
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -1084,6 +1185,49 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class MethodSetProperties
             {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Entry
+                    CopyPublicKeyToClipBoard = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Entry(
+                        "CopyPublicKeyToClipBoard",
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties._CopyPublicKeyToClipBoard_Stub,
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties._CopyPublicKeyToClipBoard_CanInvoke,
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties._CopyPublicKeyToClipBoard_InvokeMethod);
+                private static void _CopyPublicKeyToClipBoard_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ProductDetail.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Data> c, global::LightSwitchApplication.ProductDetail.DetailsClass d, object sf)
+                {
+                    c(d, ref d._CopyPublicKeyToClipBoardMethod, sf);
+                }
+                private static global::System.Exception _CopyPublicKeyToClipBoard_CanInvoke(global::LightSwitchApplication.ProductDetail.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.CopyPublicKeyToClipBoard_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _CopyPublicKeyToClipBoard_InvokeMethod(global::LightSwitchApplication.ProductDetail.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.CopyPublicKeyToClipBoard_Execute();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Entry
+                    CopyPrivateKeyToClipBoard = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Entry(
+                        "CopyPrivateKeyToClipBoard",
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties._CopyPrivateKeyToClipBoard_Stub,
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties._CopyPrivateKeyToClipBoard_CanInvoke,
+                        global::LightSwitchApplication.ProductDetail.DetailsClass.MethodSetProperties._CopyPrivateKeyToClipBoard_InvokeMethod);
+                private static void _CopyPrivateKeyToClipBoard_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ProductDetail.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ProductDetail, global::LightSwitchApplication.ProductDetail.DetailsClass>.Data> c, global::LightSwitchApplication.ProductDetail.DetailsClass d, object sf)
+                {
+                    c(d, ref d._CopyPrivateKeyToClipBoardMethod, sf);
+                }
+                private static global::System.Exception _CopyPrivateKeyToClipBoard_CanInvoke(global::LightSwitchApplication.ProductDetail.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.CopyPrivateKeyToClipBoard_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _CopyPrivateKeyToClipBoard_InvokeMethod(global::LightSwitchApplication.ProductDetail.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.CopyPrivateKeyToClipBoard_Execute();
+                }
+
             }
         }
     }
