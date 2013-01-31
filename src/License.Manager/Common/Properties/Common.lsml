@@ -1236,8 +1236,6 @@
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -1245,8 +1243,6 @@
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
-          <MaxLength
-            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

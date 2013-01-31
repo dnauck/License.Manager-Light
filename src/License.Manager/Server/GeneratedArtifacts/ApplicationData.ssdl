@@ -104,8 +104,8 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-    <Property Name="PrivateKey" Type="nvarchar" Nullable="false" MaxLength="255" />
-    <Property Name="PublicKey" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PrivateKey" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PublicKey" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="ProductFeature_Product">
     <End Role="Product" Type="ApplicationDataStore.Product" Multiplicity="1" />
