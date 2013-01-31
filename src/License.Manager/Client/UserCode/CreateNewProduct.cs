@@ -24,5 +24,30 @@ namespace LightSwitchApplication
             this.Close(false);
             Application.Current.ShowDefaultScreen(this.ProductProperty);
         }
+
+        partial void CreateNewProduct_Saving(ref bool handled)
+        {
+            if (ProductProperty.KeyPair != null)
+                return;
+
+            ProductProperty.KeyPair = new KeyPair();
+
+            if (!string.IsNullOrWhiteSpace(ProductProperty.KeyPair.PrivateKey))
+                return;
+
+            var passPhrase = this.ShowInputBox("Please enter the pass phrase to encrypt the private key.",
+                                               "Private Key Generator");
+
+            if (string.IsNullOrWhiteSpace(passPhrase))
+            {
+                this.ShowMessageBox("Invalid pass phrase!", "Private Key Generator", MessageBoxOption.Ok);
+                handled = false;
+                return;
+            }
+
+            var keyPair = Portable.Licensing.Security.Cryptography.KeyGenerator.Create().GenerateKeyPair();
+            ProductProperty.KeyPair.PrivateKey = keyPair.ToEncryptedPrivateKeyString(passPhrase);
+            ProductProperty.KeyPair.PublicKey = keyPair.ToPublicKeyString();
+        }
     }
 }
