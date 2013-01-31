@@ -59,7 +59,7 @@
         Name="Tasks">
         <ApplicationNavigationGroup.Attributes>
           <DisplayName
-            Value="Tasks" />
+            Value="Products" />
         </ApplicationNavigationGroup.Attributes>
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowSearchProducts]"
@@ -67,9 +67,16 @@
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowCreateNewProduct]"
           Name="CreateNewProduct" />
+      </ApplicationNavigationGroup>
+      <ApplicationNavigationGroup
+        Name="group">
+        <ApplicationNavigationGroup.Attributes>
+          <DisplayName
+            Value="Customers" />
+        </ApplicationNavigationGroup.Attributes>
         <ApplicationNavigationLink
           Command="!module/Commands[ScreenCommandShowCustomersListDetail]"
-          Name="CustomersListDetail" />
+          Name="link" />
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="Administration">
