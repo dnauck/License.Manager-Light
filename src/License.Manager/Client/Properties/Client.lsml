@@ -1811,6 +1811,16 @@
                   DataType="LightSwitchCommonModule:Product"
                   Kind="Details"
                   Name="Product">
+                  <ContentItem.Attributes>
+                    <ShowAsLinkSettings
+                      Value="LicenseDetail">
+                      <ShowAsLinkSettings.Attributes>
+                        <ScreenParameterMapping
+                          KeyProperty="LightSwitchCommonModule:Product/Properties[Id]"
+                          ScreenParameter="LicenseDetail/Properties[LicenseId]" />
+                      </ShowAsLinkSettings.Attributes>
+                    </ShowAsLinkSettings>
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
