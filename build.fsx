@@ -6,7 +6,7 @@ open System
 
 // build properties
 let buildTarget = getBuildParamOrDefault "buildTarget" "Publish"
-let buildConfiguration = getBuildParamOrDefault "buildConfiguration" "Release"
+let buildConfiguration = getBuildParamOrDefault "buildConfiguration" "Debug"
 
 // common path properties
 let sourceDir = currentDirectory @@ "src"
@@ -47,7 +47,11 @@ Target "Build" (fun _ ->
     build (fun msbuild ->
         {msbuild with
             Targets = [buildTarget]
-            Properties = ["Configuration", buildConfiguration]
+            Properties = 
+                [
+                "Configuration", buildConfiguration
+                "AssemblyVersion", assemblyFileVersion
+                ]
         }
     ) solutionFile
 )

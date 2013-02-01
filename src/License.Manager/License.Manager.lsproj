@@ -27,6 +27,33 @@
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
     <AllowAllWindowsUsers>true</AllowAllWindowsUsers>
+    <AdministratorFullName />
+    <AdministratorUserName />
+    <AllowUntrustedCertificate>False</AllowUntrustedCertificate>
+    <DeployDatabase>True</DeployDatabase>
+    <AddAdministrator>True</AddAdministrator>
+    <BootstrapperComponentsUrl />
+    <DefaultInstallLocation>License.Manager</DefaultInstallLocation>
+    <DeploySchema>False</DeploySchema>
+    <PublishLocation>..\..\Publish</PublishLocation>
+    <PublishNewDatabase>True</PublishNewDatabase>
+    <PublishUrl />
+    <PublishSite>Default Web Site/License.Manager</PublishSite>
+    <RemotePublish>False</RemotePublish>
+    <UseLightSwitchWebDeploymentProvider>True</UseLightSwitchWebDeploymentProvider>
+    <AzureAllowUpgrade>True</AzureAllowUpgrade>
+    <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
+    <AzureDeploymentLabel>License.Manager</AzureDeploymentLabel>
+    <AzureWebSite />
+    <AzureWebSpace />
+    <AzureHostedService />
+    <AzureHostedServiceLabel>Production</AzureHostedServiceLabel>
+    <AzureStorageService />
+    <SslCertificateThumbprint />
+    <DefaultDatabaseName>LicenseManager</DefaultDatabaseName>
+    <LightSwitchPublishVersion>v1.8</LightSwitchPublishVersion>
+    <PublishServiceOnly>False</PublishServiceOnly>
+    <AzureCredentials />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -173,6 +200,16 @@
       <Client>MICROSOFT.LIGHTSWITCH.EXTENSIONS.CLIENT;MICROSOFT.LIGHTSWITCH.EXTENSIONS.DESIGN.CLIENT</Client>
       <Server>MICROSOFT.LIGHTSWITCH.EXTENSIONS.SERVER</Server>
     </LightSwitchExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Install>True</Install>
+      <Name>.NETFramework,Version=v4.0</Name>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Install>True</Install>
+      <Name>Microsoft.Windows.Installer.4.5</Name>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.targets" />
 </Project>

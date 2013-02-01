@@ -37,6 +37,9 @@
     <WCFRIASERVICESSDKPath Condition=" '$(WCFRIASERVICESSDKPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\WCFRIAServices\v1.0@InstallPath)</WCFRIASERVICESSDKPath>
     <WCFDATASERVICESInstallPath Condition=" '$(WCFDATASERVICESInstallPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft WCF Data Services\5.0@InstallLocation)</WCFDATASERVICESInstallPath>
     <WCFDATASERVICESInstallPath Condition=" '$(WCFDATASERVICESInstallPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Microsoft WCF Data Services\5.0@InstallLocation)</WCFDATASERVICESInstallPath>
+    <SignManifests>False</SignManifests>
+    <ManifestCertificateThumbprint />
+    <ManifestKeyFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
