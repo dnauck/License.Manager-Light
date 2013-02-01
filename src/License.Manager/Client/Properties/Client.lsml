@@ -137,6 +137,8 @@
           <Generated />
         </ScreenMethod.Attributes>
       </ScreenMethod>
+      <ScreenMethod
+        Name="CreateProduct" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -179,6 +181,24 @@
                 <ChainExpression>
                   <CallExpression
                     Target="SearchProducts/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Kind="Command"
+            Name="CreateProduct">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="New Product" />
+              <Description
+                Value="Create new product" />
+            </ContentItem.Attributes>
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="SearchProducts/Methods[CreateProduct]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>

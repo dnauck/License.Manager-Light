@@ -183,6 +183,7 @@
     <Compile Include="UserCode\CreateNewProduct.cs" />
     <Compile Include="UserCode\LicenseDetail.cs" />
     <Compile Include="UserCode\ProductDetail.cs" />
+    <Compile Include="UserCode\SearchProducts.cs" />
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Client.lsml">
