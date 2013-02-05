@@ -18,8 +18,8 @@ let toolsDir = currentDirectory @@ "Tools"
 
 // common assembly info properties
 let assemblyVersion = getBuildParamOrDefault "assemblyVersion" "0.0.0.0"
-let assemblyFileVersion = getBuildParamOrDefault "assemblyFileVersion" "0.0.0.0"
-let assemblyInformationalVersion = getBuildParamOrDefault "assemblyInformationalVersion" "0.0.0-devel"
+//let assemblyFileVersion = getBuildParamOrDefault "assemblyFileVersion" "0.0.0.0"
+//let assemblyInformationalVersion = getBuildParamOrDefault "assemblyInformationalVersion" "0.0.0-devel"
 
 // Targets
 Target "All" DoNothing
@@ -37,9 +37,9 @@ Target "CreateAssemblyInfo" (fun _ ->
         Attribute.Company "Nauck IT KG"
         Attribute.Product "License Manager Light"
         Attribute.Copyright (sprintf "Copyright © 2012 - %A Nauck IT KG" DateTime.Now.Year)
-        Attribute.Version assemblyVersion
-        Attribute.FileVersion assemblyFileVersion
-        Attribute.InformationalVersion assemblyInformationalVersion
+//        Attribute.Version assemblyVersion
+//        Attribute.FileVersion assemblyFileVersion
+//        Attribute.InformationalVersion assemblyInformationalVersion
         ]
 )
 
@@ -50,7 +50,7 @@ Target "Build" (fun _ ->
             Properties = 
                 [
                 "Configuration", buildConfiguration
-                "AssemblyVersion", assemblyFileVersion
+                "AssemblyVersion", assemblyVersion
                 ]
         }
     ) solutionFile
