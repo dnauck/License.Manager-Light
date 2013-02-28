@@ -2,7 +2,7 @@
 <ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
   <Application
     DefaultNavigationItem="!module/NavigationItems[Tasks]"
-    Logo="Microsoft.LightSwitch.UserImageResources::Resources\Portable.Licensing_512x512.png"
+    Logo=""
     Name="LightSwitchApplication"
     Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
     Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme"

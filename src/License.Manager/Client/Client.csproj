@@ -203,9 +203,6 @@
     <Folder Include="Screens\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Portable.Licensing_512x512.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\Portable.Licensing_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
