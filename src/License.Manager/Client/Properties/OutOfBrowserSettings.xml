@@ -7,5 +7,7 @@
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="Required" />
   </OutOfBrowserSettings.SecuritySettings>
-  <OutOfBrowserSettings.Icons />
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="32,32">Resources/Portable.Licensing_32x32.png</Icon>
+  </OutOfBrowserSettings.Icons>
 </OutOfBrowserSettings>
