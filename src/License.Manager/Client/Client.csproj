@@ -123,8 +123,9 @@
       <HintPath>$(WCFDATASERVICESInstallPath)\bin\Silverlight\Microsoft.Data.Services.Client.SL.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Portable.Licensing">
-      <HintPath>..\..\..\packages\Portable.Licensing.0.0.0-devel\lib\portable-net40+sl4+wp7+win8\Portable.Licensing.dll</HintPath>
+    <Reference Include="Portable.Licensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Portable.Licensing.1.1.0\lib\portable-net40+sl4+wp7+win8\Portable.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition">
       <SpecificVersion>False</SpecificVersion>
